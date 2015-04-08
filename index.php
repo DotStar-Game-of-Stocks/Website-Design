@@ -52,13 +52,59 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>rss feed</p>
+          <h2>CNN MONEY</h2>
+          <p><?php
+$rss = new DOMDocument();
+$rss->load('http://rss.cnn.com/rss/money_topstories.rss');
+$feed = array();
+foreach ($rss->getElementsByTagName('item') as $node) {
+$item = array (
+'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
+'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
+'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
+'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue,
+);
+array_push($feed, $item);
+}
+$limit = 5;
+for($x=0;$x<$limit;$x++) {
+$title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
+$link = $feed[$x]['link'];
+$description = $feed[$x]['desc'];
+$date = date('l F d, Y', strtotime($feed[$x]['date']));
+echo '<p><strong><a href="'.$link.'" title="'.$title.'">'.$title.'</a></strong><br />';
+echo '<small><em>Posted on '.$date.'</em></small></p>';
+echo '<p>'.$description.'</p>';
+}
+?></p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <h2>CNBC</h2>
+          <p><?php
+$rss = new DOMDocument();
+$rss->load('http://www.cnbc.com/id/15839069/device/rss/rss.html');
+$feed = array();
+foreach ($rss->getElementsByTagName('item') as $node) {
+$item = array (
+'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
+'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
+'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
+'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue,
+);
+array_push($feed, $item);
+}
+$limit = 5;
+for($x=0;$x<$limit;$x++) {
+$title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
+$link = $feed[$x]['link'];
+$description = $feed[$x]['desc'];
+$date = date('l F d, Y', strtotime($feed[$x]['date']));
+echo '<p><strong><a href="'.$link.'" title="'.$title.'">'.$title.'</a></strong><br />';
+echo '<small><em>Posted on '.$date.'</em></small></p>';
+echo '<p>'.$description.'</p>';
+}
+?></p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
        </div>
         <div class="col-md-4">
