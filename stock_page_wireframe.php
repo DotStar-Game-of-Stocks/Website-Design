@@ -25,13 +25,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./index.html">Stock Forecast</a>
+          <a class="navbar-brand" href="index.php">Stock Forecast</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 		<ul class="nav navbar-nav">
-            <li><a href="./index.html">Game</a></li>
-            <li class="active"><a href="./about.html">About Us</a></li>
-            <li><a href="./faqs.html">FAQS</a></li>
+            <li><a href="index.php">Game</a></li>
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="faqs.php">FAQS</a></li>
 			<li>
 				<form class="navbar-form navbar-left" role="search">
 					<div class="form-group">

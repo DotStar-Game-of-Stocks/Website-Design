@@ -26,7 +26,15 @@
             <li><a href="index.php">Game</a></li>
             <li><a href="about.php">About Us</a></li>
             <li><a href="faqs.php">FAQS</a></li>
-         </ul>
+			<li>
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			</li>
+        </ul>
       </div>
     </nav>
 <div class="row">
