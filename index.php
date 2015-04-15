@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GameOfStocks</title>
+    <title>Stock Forecast</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">GameOfStocks</a>
+          <a class="navbar-brand" href="index.php">Stock Forecast</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 		<ul class="nav navbar-nav">
@@ -50,7 +50,7 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>GameOfStocks</h1>
+        <h1>Stock Forecast</h1>
         <p>This is a temporary page because we have no idea what is going on at the backend. It includes 3 tabs on top and 3 stuff on the bottom for whatever purposes.</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
       </div>
