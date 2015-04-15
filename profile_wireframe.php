@@ -65,6 +65,7 @@
                     </div>
 				</div>
 			</div>
+			<form method = "link" action = "portfolio_wireframe.php"><button type="submit" class="btn btn-default">Go to Portfolio</button> </form>
 			<h3>Update User Details</h3>
             <label>Username</label>
              <input type="text" class="form-control" placeholder="Username">
