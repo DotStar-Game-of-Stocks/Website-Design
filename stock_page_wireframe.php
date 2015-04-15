@@ -53,7 +53,7 @@
 			<h2>Company Name - Stock symbol</h2>
 			<h3><font color="green">00.00%</font><font color="red">00.00%</font></h3>
 			<img src="stock_chart_placeholder.jpg" class="img-rounded img-responsive""/>
-			<button type="submit" class="btn btn-default">Make new trade</button> 
+			<form method = "link" action = "newtrade.php"><button type="submit" class="btn btn-default">Make new trade</button> </form>
 			
 			<h4>Today's Trading</h4>
 			<table class="table table-stribed table-content table-condensed table-striped">
