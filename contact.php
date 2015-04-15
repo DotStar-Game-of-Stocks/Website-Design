@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>Contact Us form</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	</head>
 
@@ -23,9 +23,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 		<ul class="nav navbar-nav">
-            <li><a href="./index.html">Game</a></li>
-            <li><a href="./about.html">About Us</a></li>
-            <li class="active"><a href="./contact.html">Contact/FAQS</a></li>
+            <li><a href="index.php">Game</a></li>
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="faqs.php">FAQS</a></li>
          </ul>
       </div>
     </nav>

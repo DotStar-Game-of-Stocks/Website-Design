@@ -31,7 +31,7 @@
 		<ul class="nav navbar-nav">
             <li><a href="./index.html">Game</a></li>
             <li class="active"><a href="./about.html">About Us</a></li>
-            <li><a href="./faqs.html">Contact/FAQS</a></li>
+            <li><a href="./faqs.html">FAQS</a></li>
 			<li>
 				<form class="navbar-form navbar-left" role="search">
 					<div class="form-group">
@@ -143,7 +143,8 @@
 					<td>Net profit margin</td>
 					<td class="statistic-values text-right">00.00%</td>
 				</tr>
-			</table>			
+			</table>	
+			<a href="#top">To the top</a>
         </section>
         <!-- SECTION END -->
     </div>

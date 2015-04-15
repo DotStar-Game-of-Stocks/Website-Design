@@ -31,9 +31,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 		<ul class="nav navbar-nav">
-            <li class="active"><a href="./index.html">Game</a></li>
-            <li><a href="./about.html">About Us</a></li>
-            <li><a href="./faqs.html">Contact/FAQS</a></li>
+            <li class="active"><a href="index.php">Game</a></li>
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="faqs.php">FAQS</a></li>
          </ul>
         </div><!--/.navbar-collapse -->
       </div>

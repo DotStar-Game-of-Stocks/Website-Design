@@ -27,13 +27,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./index.html">GameOfStocks</a>
+          <a class="navbar-brand" href="index.php">GameOfStocks</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 		<ul class="nav navbar-nav">
-            <li><a href="./index.html">Game</a></li>
-            <li><a href="./about.html">About Us</a></li>
-            <li class="active"><a href="./faqs.html">Contact/FAQS</a></li>
+            <li><a href="index.php">Game</a></li>
+            <li><a href="about.php">About Us</a></li>
+            <li class="active"><a href="./faqs.php">FAQS</a></li>
          </ul>
         </div><!--/.navbar-collapse -->
       </div>
