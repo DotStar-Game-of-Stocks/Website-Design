@@ -27,7 +27,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">GameOfStocks</a>
+          <a class="navbar-brand" href="index.php">Stock Forecast</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 		<ul class="nav navbar-nav">
@@ -51,107 +51,85 @@
     <div class="jumbotron">
       <div class="container">
         <h1>About Us</h1>
-        <p>Game of Stocks is created by a group of people from University of Illinois. More to come on this description.</p>
+        <p>Stock Forecast is created by a group of people from University of Illinois. More to come on this description.</p>
       </div>
     </div>
 
     <div class="container">
         <!-- Team Members Row -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-9">
                 <h2 class="page-header">Our Team</h2>
             </div>
-            <div class="col-lg-3 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://graph.facebook.com/david.fey.18/picture?width=200&height=200" alt="">
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-center " src="http://graph.facebook.com/david.fey.18/picture?width=200&height=200" alt="">
                 <h3>David Fey
                     <small>Job Title</small>
                 </h3>
                 <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
             </div>
-            <div class="col-lg-3 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://graph.facebook.com/boldnc/picture?width=200&height=200" alt="">
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-center " src="http://graph.facebook.com/boldnc/picture?width=200&height=200" alt="">
                 <h3>Nathan Cho
                     <small>Job Title</small>
                 </h3>
                 <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
             </div>
-            <div class="col-lg-3 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://graph.facebook.com/lawortsmann/picture?width=200&height=200" alt="">
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-center " src="http://graph.facebook.com/lawortsmann/picture?width=200&height=200" alt="">
                 <h3>Luke Wortsmann
                     <small>Job Title</small>
                 </h3>
                 <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
             </div>
-            <div class="col-lg-3 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://graph.facebook.com/thomas.varghese.92102/picture?width=200&height=200" alt="">
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-center " src="http://graph.facebook.com/thomas.varghese.92102/picture?width=200&height=200" alt="">
                 <h3>Thomas Varghese
                     <small>Job NAME</small>
                 </h3>
                 <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
             </div>
-            <div class="col-lg-3 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://graph.facebook.com/alice.lee.9047506/picture?width=200&height=200" alt="">
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-center" src="http://graph.facebook.com/alice.lee.9047506/picture?width=200&height=200" alt="">
                 <h3>Alice Li
                     <small>Job Title</small>
                 </h3>
                 <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
             </div>
-            <div class="col-lg-3 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://graph.facebook.com/nate.harroun.9/picture?width=200&height=200" alt="">
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-center " src="http://graph.facebook.com/nate.harroun.9/picture?width=200&height=200" alt="">
                 <h3>Nate Harroun
                     <small>Job Title</small>
                 </h3>
                 <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
             </div>
-			<div class="col-lg-3 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://graph.facebook.com/alison.wen/picture?width=200&height=200" alt="">
+			<div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-center" src="http://graph.facebook.com/alison.wen/picture?width=200&height=200" alt="">
                 <h3>Alison Wen
                     <small>Job Title</small>
                 </h3>
                 <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
             </div>
-						<div class="col-lg-3 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://graph.facebook.com/100005120959448/picture?width=200&height=200" alt="">
+						<div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-center " src="http://graph.facebook.com/100005120959448/picture?width=200&height=200" alt="">
                 <h3>Yu Wu
                     <small>Job Title</small>
                 </h3>
                 <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
             </div>
-						<div class="col-lg-3 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://graph.facebook.com/phunggiavivi/picture?width=200&height=200" alt="">
-                <h3>Vi Vi
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-						<div class="col-lg-3 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://graph.facebook.com/xinlutu9/picture?width=200&height=200" alt="">
-                <h3>Xinlu Tu
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-						<div class="col-lg-3 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://graph.facebook.com/adashuang/picture?width=200&height=200" alt="">
+						<div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-center " src="http://graph.facebook.com/adashuang/picture?width=200&height=200" alt="">
                 <h3>Shuang Qu
                     <small>Job Title</small>
                 </h3>
                 <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-						<div class="col-lg-3 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://graph.facebook.com/100006572705377/picture?width=200&height=200" alt="">
-                <h3>Longyuan Tang
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-			
+            </div>			
         </div>
 
       <hr>
 
       <footer>
-        <p>&copy; Lame Thing Here 2015</p>
+        <p>&copy; Stock Forecast 2015</p>
       </footer>
     </div> <!-- /container -->
 
