@@ -70,7 +70,7 @@
                     </div>
 				</div>
 			</div>
-			<form method = "link" action = "portfolio_wireframe.php"><button type="submit" class="btn btn-default">Go to Portfolio</button> </form>
+			<form method = "link" action = "portfolio_wireframe.php"><button type="submit" class="btn btn-success">Go to Portfolio</button> </form>
 			<h3>Update User Details</h3>
             <label>Username</label>
              <input type="text" class="form-control" placeholder="Username">
@@ -84,11 +84,11 @@
             <h3>Change YOur Password</h3>
             <br></br>
             <label>Enter Old Password</label>
-            <input type="password" class="form-control">
+            <input type="password" class="form-control" placeholder="********">
             <label>Enter New Password</label>
-            <input type="password" class="form-control">
+            <input type="password" class="form-control" placeholder="********">
             <label>Confirm New Password</label>
-            <input type="password" class="form-control" />
+            <input type="password" class="form-control" placeholder="********">
             <br></br>
             <a href="#" class="btn btn-warning">Change Password</a>
             
