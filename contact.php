@@ -36,8 +36,9 @@
 			</li>
          </ul>
 		 <ul class="nav navbar-nav navbar-right">
-          <li><a href = "signup.php">Sign Up</a></li>
-          <li><a href = "login.php">Login</a></li>
+			<li><a href = "profile_wireframe.php">Profile</a></li>
+			<li><a href = "signup.php">Sign Up</a></li>
+			<li><a href = "login.php">Login</a></li>
         </ul>
       </div>
     </nav>

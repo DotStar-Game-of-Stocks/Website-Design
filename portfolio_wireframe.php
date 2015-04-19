@@ -42,8 +42,9 @@
 			</li>
          </ul>
 		 <ul class="nav navbar-nav navbar-right">
-          <li><a href = "signup.php">Sign Up</a></li>
-          <li><a href = "login.php">Login</a></li>
+			<li><a href = "profile_wireframe.php">Profile</a></li>
+			<li><a href = "signup.php">Sign Up</a></li>
+			<li><a href = "login.php">Login</a></li>
         </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -62,7 +63,7 @@
 			<p></p>
 			<h4><strong>Available Cash</strong></h4>
 			<h4>$90,000,000.00</h4>
-			<form method = "Link" action="newtrade.php"><button type="submit" class="btn btn-default">Make new trade</button></form> 
+			<form method = "Link" action="newtrade.php"><button type="submit" class="btn btn-success">Make new trade</button></form> 
 			<h4>Stocks owned</h4>
 			<table class="table table-stribed table-content table-condensed table-striped">
 				<tr>
