@@ -106,9 +106,9 @@
 		<a href="#top">To the top</a>
 		<hr>
 		
-		<p> If you still have questions, <a href="./contact.html">Contact Us</a/>. <a href="#top">To the top</a></p>
+		<p> If you still have questions, <a href="contact.php">Contact Us</a/>. <a href="#top">To the top</a></p>
       <footer>
-        <p>&copy; Lame Thing Here 2015</p>
+        <p>&copy; Stock Forecast 2015</p>
       </footer>
     </div> <!-- /container -->
 
