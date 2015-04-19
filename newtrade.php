@@ -29,8 +29,8 @@
           </button>
           <a class="navbar-brand" href="index.php">Stock Forecast</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-		<ul class="nav navbar-nav">
+        <div id="navbar" class="navbar-collapse">
+		<ul class="nav navbar-nav navbar-left">
             <li><a href="index.php">Game</a></li>
             <li><a href="about.php">About Us</a></li>
             <li><a href="faqs.php">FAQS</a></li>
@@ -43,6 +43,10 @@
 				</form>
 			</li>
          </ul>
+		 <ul class="nav navbar-nav navbar-right">
+          <li><a href = "signup.php">Sign Up</a></li>
+          <li><a href = "login.php">Login</a></li>
+        </ul>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>

@@ -29,10 +29,10 @@
           </button>
           <a class="navbar-brand" href="index.php">Stock Forecast</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-		<ul class="nav navbar-nav">
+        <div id="navbar" class="navbar-collapse">
+		<ul class="nav navbar-nav navbar-left">
             <li><a href="index.php">Game</a></li>
-            <li class="active"><a href="about.php">About Us</a></li>
+            <li><a href="about.php">About Us</a></li>
             <li><a href="faqs.php">FAQS</a></li>
 			<li>
 				<form class="navbar-form navbar-left" role="search">
@@ -43,6 +43,10 @@
 				</form>
 			</li>
          </ul>
+		 <ul class="nav navbar-nav navbar-right">
+          <li><a href = "signup.php">Sign Up</a></li>
+          <li><a href = "login.php">Login</a></li>
+        </ul>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
@@ -69,6 +73,11 @@
     </div> <!-- /container -->
 
 
+	    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   
