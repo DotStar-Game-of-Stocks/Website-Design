@@ -56,8 +56,8 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Stock Forecast</h1>
-        <p>This is a temporary page because we have no idea what is going on at the backend. It includes 3 tabs on top and 3 stuff on the bottom for whatever purposes.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        <p>Here, you can trade real life stocks without actually losing money! Learn how to trade and get ready for the real market.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Get Started &raquo;</a></p>
       </div>
     </div>
 
