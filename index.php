@@ -27,13 +27,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Stock Forecast</a>
+          <a class="navbar-brand" href="index">Stock Forecast</a>
         </div>
         <div id="navbar" class="navbar-collapse">
 		<ul class="nav navbar-nav navbar-left">
-            <li class="active"><a href="index.php">Game</a></li>
-            <li><a href="about.php">About Us</a></li>
-            <li><a href="faqs.php">FAQS</a></li>
+            <li class="active"><a href="index">Game</a></li>
+            <li><a href="about">About Us</a></li>
+            <li><a href="faqs">FAQS</a></li>
 			<li>
 				<form class="navbar-form navbar-left" role="search">
 					<div class="form-group">
@@ -44,9 +44,9 @@
 			</li>
          </ul>
 		 <ul class="nav navbar-nav navbar-right">
-			<li><a href = "profile_wireframe.php">Profile</a></li>
-			<li><a href = "signup.php">Sign Up</a></li>
-			<li><a href = "login.php">Login</a></li>
+			<li><a href = "profile_wireframe">Profile</a></li>
+			<li><a href = "signup">Sign Up</a></li>
+			<li><a href = "login">Login</a></li>
         </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -57,7 +57,7 @@
       <div class="container">
         <h1>Stock Forecast</h1>
         <p>Here, you can trade real life stocks without actually losing money! Learn how to trade and get ready for the real market.</p>
-        <p><a class="btn btn-primary btn-lg" href="portfolio_wireframe.php" role="button">Get Started &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="portfolio_wireframe" role="button">Get Started &raquo;</a></p>
       </div>
     </div>
 
@@ -96,7 +96,7 @@ echo '<p>'.$description.'</p>';
           <h2>CNBC</h2>
           <p><?php
 $rss = new DOMDocument();
-$rss->load('http://www.cnbc.com/id/15839069/device/rss/rss.html');
+$rss->load('http://www.cnbc.com/id/15839069/device/rss/rss');
 $feed = array();
 foreach ($rss->getElementsByTagName('item') as $node) {
 $item = array (

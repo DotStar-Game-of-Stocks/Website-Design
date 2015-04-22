@@ -19,13 +19,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Stock Forecast</a>
+          <a class="navbar-brand" href="index">Stock Forecast</a>
         </div>
         <div id="navbar" class="navbar-collapse">
 		<ul class="nav navbar-nav navbar-left">
-            <li><a href="index.php">Game</a></li>
-            <li><a href="about.php">About Us</a></li>
-            <li><a href="faqs.php">FAQS</a></li>
+            <li><a href="index">Game</a></li>
+            <li><a href="about">About Us</a></li>
+            <li><a href="faqs">FAQS</a></li>
 			<li>
 				<form class="navbar-form navbar-left" role="search">
 					<div class="form-group">
@@ -36,19 +36,14 @@
 			</li>
          </ul>
 		 <ul class="nav navbar-nav navbar-right">
-			<li><a href = "profile_wireframe.php">Profile</a></li>
-			<li><a href = "signup.php">Sign Up</a></li>
-			<li><a href = "login.php">Login</a></li>
+			<li><a href = "profile_wireframe">Profile</a></li>
+			<li><a href = "signup">Sign Up</a></li>
+			<li><a href = "login">Login</a></li>
         </ul>
       </div>
     </nav>
 <div class="row">
-  <div class="col-md-12">
-    <small><i></i>Add alerts if form ok... success, else error.</i></small>
-	<div class="alert alert-success"><strong><span class="glyphicon glyphicon-send"></span> Success! Message sent. (If form ok!)</strong></div>	  
-    <div class="alert alert-danger"><span class="glyphicon glyphicon-alert"></span><strong> Error! Please check the inputs. (If form error!)</strong></div>
-  </div>
-  <form role="form" action="mail.php" method="post" >
+  <form role="form" action="mail" method="post" >
     <div class="col-lg-6">
       <div class="well well-sm"><strong><i class="glyphicon glyphicon-ok form-control-feedback"></i> Required Field</strong></div>
       <div class="form-group">
@@ -76,17 +71,16 @@
           <input type="text" class="form-control" name="InputReal" id="InputReal" required>
           <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
       </div>
-      <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+      <input type="submit" name="submit" id="submit" value="Send" class="btn btn-info pull-right">
     </div>
   </form>
   <hr class="featurette-divider hidden-lg">
   <div class="col-lg-5 col-md-push-1">
     <address>
     <h3>Office Location</h3>
-    <p class="lead"><a href="https://www.google.com/maps/preview?ie=UTF-8&q=The+Pentagon&fb=1&gl=us&hq=1400+Defense+Pentagon+Washington,+DC+20301-1400&cid=12647181945379443503&ei=qmYfU4H8LoL2oATa0IHIBg&ved=0CKwBEPwSMAo&safe=on">The Pentagon<br>
-Washington, DC 20301</a><br>
-      Phone: XXX-XXX-XXXX<br>
-      Fax: XXX-XXX-YYYY</p>
+    <p class="lead"><a href="https://www.google.com/maps/place/Thomas+M.+Siebel+Center+for+Computer+Science/@40.113803,-88.224905,15z/data=!4m2!3m1!1s0x0:0x4e9f01d40d359630">Siebel Center for Computer Science<br>
+Urbana, IL 61801</a><br>
+      Phone: 217-333-3426</p>
     </address>
   </div>
 </div>

@@ -25,13 +25,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Stock Forecast</a>
+          <a class="navbar-brand" href="index">Stock Forecast</a>
         </div>
         <div id="navbar" class="navbar-collapse">
 		<ul class="nav navbar-nav navbar-left">
-            <li><a href="index.php">Game</a></li>
-            <li><a href="about.php">About Us</a></li>
-            <li><a href="faqs.php">FAQS</a></li>
+            <li><a href="index">Game</a></li>
+            <li><a href="about">About Us</a></li>
+            <li><a href="faqs">FAQS</a></li>
 			<li>
 				<form class="navbar-form navbar-left" role="search">
 					<div class="form-group">
@@ -42,9 +42,9 @@
 			</li>
          </ul>
 		 <ul class="nav navbar-nav navbar-right">
-			<li><a href = "profile_wireframe.php">Profile</a></li>
-			<li><a href = "signup.php">Sign Up</a></li>
-			<li><a href = "login.php">Login</a></li>
+			<li><a href = "profile_wireframe">Profile</a></li>
+			<li><a href = "signup">Sign Up</a></li>
+			<li><a href = "login">Login</a></li>
         </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -63,7 +63,7 @@
 			<p></p>
 			<h4><strong>Available Cash</strong></h4>
 			<h4>$90,000,000.00</h4>
-			<form method = "Link" action="newtrade.php"><button type="submit" class="btn btn-success">Make new trade</button></form> 
+			<form method = "Link" action="newtrade"><button type="submit" class="btn btn-success">Make new trade</button></form> 
 			<h4>Stocks owned</h4>
 			<table class="table table-stribed table-content table-condensed table-striped">
 				<tr>
