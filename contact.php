@@ -19,13 +19,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Stock Forecast</a>
+          <a class="navbar-brand" href="index">Stock Forecast</a>
         </div>
         <div id="navbar" class="navbar-collapse">
 		<ul class="nav navbar-nav navbar-left">
-            <li><a href="index.php">Game</a></li>
-            <li><a href="about.php">About Us</a></li>
-            <li><a href="faqs.php">FAQS</a></li>
+            <li><a href="index">Game</a></li>
+            <li><a href="about">About Us</a></li>
+            <li><a href="faqs">FAQS</a></li>
 			<li>
 				<form class="navbar-form navbar-left" role="search">
 					<div class="form-group">
@@ -36,14 +36,14 @@
 			</li>
          </ul>
 		 <ul class="nav navbar-nav navbar-right">
-			<li><a href = "profile_wireframe.php">Profile</a></li>
-			<li><a href = "signup.php">Sign Up</a></li>
-			<li><a href = "login.php">Login</a></li>
+			<li><a href = "profile_wireframe">Profile</a></li>
+			<li><a href = "signup">Sign Up</a></li>
+			<li><a href = "login">Login</a></li>
         </ul>
       </div>
     </nav>
 <div class="row">
-  <form role="form" action="mail.php" method="post" >
+  <form role="form" action="mail" method="post" >
     <div class="col-lg-6">
       <div class="well well-sm"><strong><i class="glyphicon glyphicon-ok form-control-feedback"></i> Required Field</strong></div>
       <div class="form-group">
@@ -71,7 +71,7 @@
           <input type="text" class="form-control" name="InputReal" id="InputReal" required>
           <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
       </div>
-      <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+      <input type="submit" name="submit" id="submit" value="Send" class="btn btn-info pull-right">
     </div>
   </form>
   <hr class="featurette-divider hidden-lg">
