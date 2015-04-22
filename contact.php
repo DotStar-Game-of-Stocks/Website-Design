@@ -48,7 +48,7 @@
 	<div class="alert alert-success"><strong><span class="glyphicon glyphicon-send"></span> Success! Message sent. (If form ok!)</strong></div>	  
     <div class="alert alert-danger"><span class="glyphicon glyphicon-alert"></span><strong> Error! Please check the inputs. (If form error!)</strong></div>
   </div>
-  <form role="form" action="" method="post" >
+  <form role="form" action="mail.php" method="post" >
     <div class="col-lg-6">
       <div class="well well-sm"><strong><i class="glyphicon glyphicon-ok form-control-feedback"></i> Required Field</strong></div>
       <div class="form-group">
