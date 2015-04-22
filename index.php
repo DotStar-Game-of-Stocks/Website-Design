@@ -62,7 +62,7 @@
     </div>
 
     <div class="container">
-      <!-- Example row of columns -->
+      <!-- Rows of News -->
       <div class="row">
         <div class="col-md-4">
           <h2>CNN MONEY</h2>
@@ -90,7 +90,7 @@ echo '<small><em>Posted on '.$date.'</em></small></p>';
 echo '<p>'.$description.'</p>';
 }
 ?></p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+
         </div>
         <div class="col-md-4">
           <h2>CNBC</h2>
@@ -118,7 +118,7 @@ echo '<small><em>Posted on '.$date.'</em></small></p>';
 echo '<p>'.$description.'</p>';
 }
 ?></p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       
        </div>
         <div class="col-md-4">
           <h2>Yahoo News</h2>
@@ -146,7 +146,7 @@ echo '<small><em>Posted on '.$date.'</em></small></p>';
 echo '<p>'.$description.'</p>';
 }
 ?></p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+
         </div>
       </div>
 
