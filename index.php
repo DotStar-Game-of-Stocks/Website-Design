@@ -57,7 +57,7 @@
       <div class="container">
         <h1>Stock Forecast</h1>
         <p>Here, you can trade real life stocks without actually losing money! Learn how to trade and get ready for the real market.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Get Started &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="portfolio_wireframe.php" role="button">Get Started &raquo;</a></p>
       </div>
     </div>
 
