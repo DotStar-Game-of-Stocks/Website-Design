@@ -31,7 +31,7 @@
         </div>
         <div id="navbar" class="navbar-collapse">
 		<ul class="nav navbar-nav navbar-left">
-            <li class="active"><a href="index.php">Game</a></li>
+            <li><a href="index.php">Game</a></li>
             <li><a href="about.php">About Us</a></li>
             <li><a href="faqs.php">FAQS</a></li>
 			<li class = "active"><a href="dashboard.php">Dashboard</a></li>
@@ -55,47 +55,106 @@
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="container">
+	<br></br>
+	<br></br>
+	<h1>Dashboard</h1>
 	<!--Stocks-->
 	<div class="row">
 		<div class="col-lg-4 col-sm-6">
-			<h2>Most Purchased Stocks</h2>
+			<h3 class="statistic-values text-center">Most Purchased Stocks</h3>
 			<table class="table table-stribed table-content table-condensed table-striped">
 				<tr>
-					<td><strong>Symbol</strong></td>
-					<td><strong>Current Purchasing Price</strong></td>
+					<th class="statistic-values text-center">Symbol</th>
+					<th class="statistic-values text-center">Current Purchasing Price</th>
 				</tr>
 				<tr>
-					<td>Name</td>
-					<td>$0.00</td>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
 				</tr>
 				<tr>
-					<td>Name</td>
-					<td>$0.00</td>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
 				</tr>
 				<tr>
-					<td>Name</td>
-					<td>$0.00</td>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
+				</tr>
+				<tr>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
+				</tr>
+				<tr>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
+				</tr>
+				<tr>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
+				</tr>
+				<tr>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
+				</tr>
+				<tr>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
+				</tr>
+				<tr>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
+				</tr>
+				<tr>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
 				</tr>
 			</table>
 		</div>
 		<div class="col-lg-4 col-sm-6">
-			<h2>Most Sold Stocks</h2>
+			<h3 class="statistic-values text-center">Most Sold Stocks</h3>
 			<table class="table table-stribed table-content table-condensed table-striped">
 				<tr>
-					<td><strong>Symbol</strong></td>
-					<td><strong>Current Selling Price</strong></td>
+					<th class="statistic-values text-center"><strong>Symbol</strong></th>
+					<th class="statistic-values text-center">Current Selling Price</strong></th>
 				</tr>
 				<tr>
-					<td>Name</td>
-					<td>$0.00</td>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
 				</tr>
 				<tr>
-					<td>Name</td>
-					<td>$0.00</td>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
 				</tr>
 				<tr>
-					<td>Name</td>
-					<td>$0.00</td>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
+				</tr>
+				<tr>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
+				</tr>
+				<tr>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
+				</tr>
+				<tr>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
+				</tr>
+				<tr>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
+				</tr>
+				<tr>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
+				</tr>
+				<tr>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
+				</tr>
+				<tr>
+					<td class="statistic-values text-center">Name</td>
+					<td class="statistic-values text-center">$0.00</td>
 				</tr>
 			</table>
 		</div>
