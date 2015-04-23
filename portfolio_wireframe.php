@@ -32,6 +32,7 @@
             <li><a href="index">Game</a></li>
             <li><a href="about">About Us</a></li>
             <li><a href="faqs">FAQS</a></li>
+			<li><a href="dashboard.php">Dashboard</a></li>
 			<li>
 				<form class="navbar-form navbar-left" role="search">
 					<div class="form-group">
