@@ -57,10 +57,10 @@
     <div class="container">
 	<br></br>
 	<br></br>
-	<h1>Dashboard</h1>
+	<h1 class="statistic-values text-center">Dashboard</h1>
 	<!--Stocks-->
 	<div class="row">
-		<div class="col-lg-4 col-sm-6">
+		<div class="col-lg-6 col-sm-6">
 			<h3 class="statistic-values text-center">Most Purchased Stocks</h3>
 			<table class="table table-stribed table-content table-condensed table-striped">
 				<tr>
@@ -109,7 +109,7 @@
 				</tr>
 			</table>
 		</div>
-		<div class="col-lg-4 col-sm-6">
+		<div class="col-lg-6 col-sm-6">
 			<h3 class="statistic-values text-center">Most Sold Stocks</h3>
 			<table class="table table-stribed table-content table-condensed table-striped">
 				<tr>
