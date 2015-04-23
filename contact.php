@@ -1,4 +1,3 @@
-<div class="container">
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,39 +40,57 @@
 			<li><a href = "login">Login</a></li>
         </ul>
       </div>
+	  </div>
     </nav>
+	
+<!--This code is for the contact form-->
+<br></br>
 <div class="row">
-  <form role="form" action="mail" method="post" >
+<div class="container">
+ <form class = "form-horizontal" role="form" action="mail.php" method="post" >
     <div class="col-lg-6">
-      <div class="well well-sm"><strong><i class="glyphicon glyphicon-ok form-control-feedback"></i> Required Field</strong></div>
-      <div class="form-group">
-        <label for="InputName">Your Name</label>
-        <div class="input-group">
-          <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>
-          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
-      </div>
-      <div class="form-group">
-        <label for="InputEmail">Your Email</label>
-        <div class="input-group">
-          <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Enter Email" required  >
-          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
-      </div>
-      <div class="form-group">
-        <label for="InputMessage">Message</label>
-        <div class="input-group"
->
-          <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
-          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
-      </div>
-      <div class="form-group">
-        <label for="InputReal">What is 4+3? (Simple Spam Checker)</label>
-        <div class="input-group">
-          <input type="text" class="form-control" name="InputReal" id="InputReal" required>
-          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
-      </div>
-      <input type="submit" name="submit" id="submit" value="Send" class="btn btn-info pull-right">
+	<div class="form-group">
+        <label for="name" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="<?php echo htmlspecialchars($_POST['name']); ?>">
+            <?php echo "<p class='text-danger'>$errName</p>";?>
+        </div>
     </div>
+    <div class="form-group">
+        <label for="email" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="<?php echo htmlspecialchars($_POST['email']); ?>">
+            <?php echo "<p class='text-danger'>$errEmail</p>";?>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="message" class="col-sm-2 control-label">Message</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" rows="4" name="message"><?php echo htmlspecialchars($_POST['message']);?></textarea>
+            <?php echo "<p class='text-danger'>$errMessage</p>";?>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="human" class="col-sm-2 control-label">2 + 3 = ?</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="human" name="human" placeholder="Your Answer">
+            <?php echo "<p class='text-danger'>$errHuman</p>";?>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-10 col-sm-offset-2">
+            <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-10 col-sm-offset-2">
+            <?php echo $result; ?>    
+        </div>
+    </div>
+	</div>
   </form>
+  </div>
+ 
   <hr class="featurette-divider hidden-lg">
   <div class="col-lg-5 col-md-push-1">
     <address>
@@ -85,7 +102,6 @@ Urbana, IL 61801</a><br>
   </div>
 </div>
 
-</div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
