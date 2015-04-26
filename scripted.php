@@ -114,7 +114,7 @@ else {
 				<!-- When to sell -->
 					<label class="control-label"  for="Sell">When to Sell Stocks</label>
 					<div class="controls">
-						<input type="text" id="sell" name="sell" class="form-control" placeholder="Decreases by 5%">
+						<input type="text" id="sell" name="sell" class="form-control" placeholder="Decreases by $10">
 						<p class="help-block">Input the price you want to sell stock at.</p>
 						<?php echo "<p class='text-danger'>$errSell</p>";?>
 					</div>
@@ -123,7 +123,7 @@ else {
 				<!-- When to buy -->
 					<label class="control-label"  for="buy">When to Buy Stocks</label>
 					<div class="controls">
-						<input type="text" id="buy" name="buy" class="form-control" placeholder="Increases to $10000">
+						<input type="text" id="buy" name="buy" class="form-control" placeholder="Increases to $10">
 						<p class="help-block">Input a price you want to buy stock at.</p>
 						<?php echo "<p class='text-danger'>$errBuy</p>";?>
 					</div>
