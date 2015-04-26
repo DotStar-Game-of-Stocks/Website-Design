@@ -40,7 +40,7 @@ IMG.displayed {
             <li><a href="./index">Game</a></li>
             <li><a href="./about">About Us</a></li>
             <li><a href="./faqs">FAQS</a></li>
-			<li><a href="./dashboard.php">Dashboard</a></li>
+			<li><a href="./dashboard">Dashboard</a></li>
          </ul>
         </div><!--/.navbar-collapse -->
       </div>
