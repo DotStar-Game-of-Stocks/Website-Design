@@ -104,7 +104,7 @@ else {
 				<!--Stock Symbols-->
 					<label class="control-label"  for="symbol">Stock Symbols</label>
 					<div class="controls">
-						<input type="text" id="symbol" name="symbol" class="form-control" placeholder="GOOG, AMZN, AAPL">
+						<input type="text" id="symbol" name="symbol" class="form-control" placeholder="GOOG, AMZN, AAPL" value="<?php echo htmlspecialchars($_POST['symbol']); ?>">
 						<p class="help-block">Separate stocks with a comma and space</p>
 						<?php echo "<p class='text-danger'>$errSyymbol</p>";?>
 					</div>
@@ -114,7 +114,7 @@ else {
 				<!-- When to sell -->
 					<label class="control-label"  for="Sell">When to Sell Stocks</label>
 					<div class="controls">
-						<input type="text" id="sell" name="sell" class="form-control" placeholder="Decreases by $10">
+						<input type="text" id="sell" name="sell" class="form-control" placeholder="Decreases by $10" value="<?php echo htmlspecialchars($_POST['sell']);?>">
 						<p class="help-block">Input the price you want to sell stock at.</p>
 						<?php echo "<p class='text-danger'>$errSell</p>";?>
 					</div>
@@ -123,7 +123,7 @@ else {
 				<!-- When to buy -->
 					<label class="control-label"  for="buy">When to Buy Stocks</label>
 					<div class="controls">
-						<input type="text" id="buy" name="buy" class="form-control" placeholder="Increases to $10">
+						<input type="text" id="buy" name="buy" class="form-control" placeholder="Increases to $10" value="<?php echo htmlspecialchars($_POST['buy']); ?>">
 						<p class="help-block">Input a price you want to buy stock at.</p>
 						<?php echo "<p class='text-danger'>$errBuy</p>";?>
 					</div>
