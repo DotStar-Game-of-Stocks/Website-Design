@@ -1,4 +1,18 @@
 <?php
+	$servername = "localhost";
+	$username = "root";
+	$password = "forcast";
+	$dbname = "forecast";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} 
+	//echo "Connected successfully";
+	
 	if ($_POST["submit"]) {
         $name = $_POST['name'];
 		$username = $_POST['username'];
@@ -36,6 +50,7 @@
 	// If there are no errors, send you are signed in
 	if (!$errName && !$errEmail && !$errPassword && !$errConfirm && !$errUsername && !$errMatch) {
 		//Code to send user stuff to server goes here whenever they tell me.
+		$sql = "INSERT INTO users ($name, $username, $password, $email)";
 		header('Location: portfolio_wireframe');
 	}
 	
