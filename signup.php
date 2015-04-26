@@ -1,29 +1,33 @@
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "forcast";
-	$dbname = "forecast";
+	if(isset($_POST['submit']))
+	{
+	$dbhost = 'localhost';
+	$dbuser = 'root';
+	$dbpass = 'stockforcast';
+	$conn = mysql_connect($dbhost, $dbuser, $dbpass);
+	if(! $conn )
+	{
+	die('Could not connect: ' . mysql_error());
+	}
 
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-
-	// Check connection
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	} 
-	//echo "Connected successfully";
-	
-	if ($_POST["submit"]) {
-        $name = $_POST['name'];
-		$username = $_POST['username'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $confirm - $_POST['password_confirm'];
- 
-        // Check if name has been entered
-        if (!$_POST['name']) {
-            $errName = 'Please enter your name';
-        }
+	if(! get_magic_quotes_gpc() )
+	{
+		$name = addslashes ($_POST['name']);
+		$username = addslashes ($_POST['username']);
+		$password = addslashes ($_POST['password']);
+		$email = addslashes ($_POST['email']);
+}
+	else
+	{
+		$name = addslashes ($_POST['name']);
+		$username = addslashes ($_POST['username']);
+		$password = addslashes ($_POST['password']);
+		$email = addslashes ($_POST['email']);
+	}
+	// Check if name has been entered
+    if (!$_POST['name']) {
+        $errName = 'Please enter your name';
+    }
 		// Check if username has been entered
         if (!$_POST['username']) {
             $errUsername = 'Please enter your username';
@@ -46,14 +50,21 @@
 		if ($_POST['password'] != $_POST['password_confirm']){
 			$errMatch = 'Your passwords do not match';
 		}
- 
-	// If there are no errors, send you are signed in
 	if (!$errName && !$errEmail && !$errPassword && !$errConfirm && !$errUsername && !$errMatch) {
-		//Code to send user stuff to server goes here whenever they tell me.
-		$sql = "INSERT INTO users ($name, $username, $password, $email)";
+		
+		$sql = "INSERT INTO users ".
+		"(name, login, password, email) ".
+       "VALUES('$name','$username','$password','$email')";
+		mysql_select_db('forecast');
+		$retval = mysql_query( $sql, $conn );
+		if(! $retval )
+		{
+			die('Could not enter data: ' . mysql_error());
+		}
+		echo "Entered data successfully\n";
+		mysql_close($conn);
 		header('Location: portfolio_wireframe');
-	}
-	
+	}		
 }
 ?>
 <!DOCTYPE html>
@@ -105,7 +116,7 @@
 		 <ul class="nav navbar-nav navbar-right">
 			<li><a href = "profile_wireframe">Profile</a></li>
 			<li class="active"><a href = "signup">Sign Up</a></li>
-			<li><a href = "login">Login</a></li>
+			<li><a href = "username">username</a></li>
         </ul>
         </div><!--/.navbar-collapse -->
       </div>
