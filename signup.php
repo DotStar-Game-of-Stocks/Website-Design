@@ -12,7 +12,7 @@
         }
 		// Check if username has been entered
         if (!$_POST['username']) {
-            $errUserame = 'Please enter your username';
+            $errUsername = 'Please enter your username';
         }
         
         // Check if email has been entered and is valid
@@ -29,21 +29,16 @@
             $errConfirm = 'Please enter confirm your password';
         }
         //Check if passwords match
-       // if (int strcmp($password , $confirm ) != 0) {
-          //  $errMatch = 'Your password does not match';
-        //}
+		if ($_POST['password'] != $_POST['password_confirm']){
+			$errMatch = 'Your passwords do not match';
+		}
  
 	// If there are no errors, send you are signed in
-	if (!$errName && !$errEmail && !$errPassword && !$errConfirm && !$errUsername) {
+	if (!$errName && !$errEmail && !$errPassword && !$errConfirm && !$errUsername && !$errMatch) {
 		//Code to send user stuff to server goes here whenever they tell me.
 		header('Location: portfolio_wireframe.php');
-		$result='You have successfully signed up.';
-    
 	}
-	else{
-		$result='There was something wrong with the sign up process. Please try again.';
-	}
-		
+	
 }
 ?>
 <!DOCTYPE html>
@@ -106,7 +101,6 @@
 	<br></br>
 	<div class="container">
 	<div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
-	<?php echo $result?>
 	<form class="form-horizontal" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method="POST">
 	<fieldset>
     <div id="legend">
@@ -159,8 +153,10 @@
       <div class="controls">
         <input type="password" id="password_confirm" name="password_confirm" class="form-control" placeholder="********">
         <p class="help-block">Please confirm password</p>
-		<?php echo "<p class='text-danger'>$errConfirm</p>";?>
-		<?php echo "<p class='text-danger'>$errMatch</p>";?>
+		<?php 
+			echo "<p class='text-danger'>$errConfirm</p>";
+			echo "<p class='text-danger'>$errMatch</p>";
+		?>
       </div>
     </div>
  
