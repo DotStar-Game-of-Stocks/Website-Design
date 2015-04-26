@@ -1,42 +1,4 @@
 <?php
-/*if ($_POST["submit"]) {
-$name = $_POST['InputName'];
-$email = $_POST['InputEmail'];
-$message = $_POST['InputMessage'];
-$real = $_POST['InputReal'];
-$formcontent="From: $name \n Message: $message";
-$recipient = "root@stockforecast.ga";
-$subject = "Contact Form";
-$mailheader = "From: $email \r\n";
-
-//Check if name has been entered
-if (!$_POST['InputName']) {
-    $errName = 'Please enter your name';
-}	
-
-//Check if email has been entered and is valid
-if (!$_POST['InputEmail'] || !filter_var($_POST['InputEmail'], FILTER_VALIDATE_EMAIL)) {
-    $errEmail = 'Please enter a valid email address';
-}
-
-//Check if message has been entered
-if (!$_POST['message']) {
-    $errMessage = 'Please enter your message';
-}
-//Check if simple anti-bot test is correct
-if ($human !== 7) {
-    $errHuman = 'Your anti-spam is incorrect';
-}
-
-// If there are no errors, send the email
-if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
-    if ($recipient, $subject, $formcontent, $mailheader) {
-        $result='<div class="alert alert-success">Thank You! I will be in touch</div>';
-    } else {
-        $result='<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later</div>';
-    }
-}
-}*/
 	if ($_POST["submit"]) {
         $name = $_POST['name'];
         $email = $_POST['email'];
