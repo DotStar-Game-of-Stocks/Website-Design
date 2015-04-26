@@ -1,3 +1,39 @@
+<?php
+	if ($_POST["submit"]) {
+        $stocks = $_POST['symbol'];
+        $lowPrice = intval($_POST['buy']);
+        $hiPrice = intval($_POST['sell']);
+
+        // Check if symbol has been entered
+        if (!$_POST['symbol']) {
+            $errSymbol = '{Please enter your stock symbol}';
+        }
+        
+        // Check if email has been entered and is valid
+        if (!$_POST['buy']) {
+            $errBuy = 'Please enter a valid price';
+        }
+        
+        //Check if sell price has been posted has been entered
+        if (!$_POST['sell']) {
+            $errSell = 'Please enter a valid price';
+        }
+  
+ 
+// If there are no errors, send the script
+if ($lowPrice > $hiPrice) {
+	$result='Please change the selling and purchasing price so selling price is higher than purchasing';
+}
+else if (!$errSymbol && !$errSell && !$errBuy) {
+	//scripted trading code belongs here but that wasn't sent to me
+    $result='Your changes have been made';
+    
+}
+else {
+    $result='Sorry there was an error saving your price choices. Please try again later';
+    }
+}
+?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -57,7 +93,8 @@
     <div class="container">
         <section style="padding-bottom: 50px; padding-top: 50px;">
 			<div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
-				<form class="form-horizontal" action='' method="POST">
+				<?php echo $result ?>
+				<form class="form-horizontal" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method="POST">
 				<fieldset>
 				<div id="legend">
 					<legend class="">Scripted Trading</legend>
@@ -69,6 +106,7 @@
 					<div class="controls">
 						<input type="text" id="symbol" name="symbol" class="form-control" placeholder="GOOG, AMZN, AAPL">
 						<p class="help-block">Separate stocks with a comma and space</p>
+						<?php echo "<p class='text-danger'>$errSyymbol</p>";?>
 					</div>
 				</div>
 	
@@ -78,6 +116,7 @@
 					<div class="controls">
 						<input type="text" id="sell" name="sell" class="form-control" placeholder="Decreases by 5%">
 						<p class="help-block">Input the price you want to sell stock at.</p>
+						<?php echo "<p class='text-danger'>$errSell</p>";?>
 					</div>
 				</div>
 				<div class="control-group">
@@ -86,12 +125,13 @@
 					<div class="controls">
 						<input type="text" id="buy" name="buy" class="form-control" placeholder="Increases to $10000">
 						<p class="help-block">Input a price you want to buy stock at.</p>
+						<?php echo "<p class='text-danger'>$errBuy</p>";?>
 					</div>
 				</div>
 				<div class="control-group">
 				<!-- Button -->
 					<div class="controls">
-					<button class="btn btn-success">Submit</button>
+					<input id="submit" name="submit" type="submit" value="Submit" class="btn btn-success">
 					</div>
 				</div>
 				</fieldset>
