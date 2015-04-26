@@ -65,6 +65,7 @@
 			<h4><strong>Available Cash</strong></h4>
 			<h4>$90,000,000.00</h4>
 			<form method = "Link" action="newtrade"><button type="submit" class="btn btn-success">Make new trade</button></form> 
+			<form method = "Link" action="scripted.php"><button type="submit" class="btn btn-success">Setting Scripted Trading</button></form> 
 			<h4>Stocks owned</h4>
 			<table class="table table-stribed table-content table-condensed table-striped">
 				<tr>
@@ -77,7 +78,7 @@
 					<td><strong>Actions</strong></td>
 				</tr>
 				<tr>
-					<td>Name</td>
+					<td><a href="stock_page_wireframe.php">Name</a></td>
 					<td>0</td>
 					<td>$0.00</td>
 					<td>$0.00</td>
@@ -86,7 +87,7 @@
 					<td>Buy or Sell</td>
 				</tr>
 				<tr>
-					<td>Name</td>
+					<td><a href="stock_page_wireframe.php">Name</a></td>
 					<td>0</td>
 					<td>$0.00</td>
 					<td>$0.00</td>
@@ -95,7 +96,7 @@
 					<td>Buy or Sell</td>
 				</tr>
 				<tr>
-					<td>Name</td>
+					<td><a href="stock_page_wireframe.php">Name</a></td>
 					<td>0</td>
 					<td>$0.00</td>
 					<td>$0.00</td>
@@ -104,7 +105,7 @@
 					<td>Buy or Sell</td>
 				</tr>
 				<tr>
-					<td>Name</td>
+					<td><a href="stock_page_wireframe.php">Name</a></td>
 					<td>0</td>
 					<td>$0.00</td>
 					<td>$0.00</td>
@@ -124,19 +125,19 @@
 				</tr>
 				<tr>
 					<td>Buy</td>
-					<td>Name</td>
+					<td><a href="stock_page_wireframe.php">Name</a></td>
 					<td>0</td>
 					<td>$0.00</td>
 				</tr>
 				<tr>
 					<td>Sell</td>
-					<td>Name</td>
+					<td><a href="stock_page_wireframe.php">Name</a></td>
 					<td>0</td>
 					<td>$0.00</td>
 				</tr>
 				<tr>
 					<td>Buy</td>
-					<td>Name</td>
+					<td><a href="stock_page_wireframe.php">Name</a></td>
 					<td>0</td>
 					<td>$0.00</td>
 				</tr>
