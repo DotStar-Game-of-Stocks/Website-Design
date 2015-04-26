@@ -33,14 +33,14 @@ IMG.displayed {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./index">GameOfStocks</a>
+          <a class="navbar-brand" href=".//">GameOfStocks</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 		<ul class="nav navbar-nav">
-            <li><a href="./index">Game</a></li>
+            <li><a href=".//">Game</a></li>
             <li><a href="./about">About Us</a></li>
             <li><a href="./faqs">FAQS</a></li>
-			<li><a href="./dashboard.php">Dashboard</a></li>
+			<li><a href="./dashboard">Dashboard</a></li>
          </ul>
         </div><!--/.navbar-collapse -->
       </div>
