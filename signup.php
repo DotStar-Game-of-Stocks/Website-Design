@@ -1,3 +1,51 @@
+<?php
+	if ($_POST["submit"]) {
+        $name = $_POST['name'];
+		$username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $confirm - $_POST['password_confirm'];
+ 
+        // Check if name has been entered
+        if (!$_POST['name']) {
+            $errName = 'Please enter your name';
+        }
+		// Check if username has been entered
+        if (!$_POST['username']) {
+            $errUserame = 'Please enter your username';
+        }
+        
+        // Check if email has been entered and is valid
+        if (!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+            $errEmail = 'Please enter a valid email address';
+        }
+        
+        //Check if password has been entered
+        if (!$_POST['password']) {
+            $errPassword = 'Please enter your password';
+        }
+		//Check if password has been entered
+        if (!$_POST['password_confirm']) {
+            $errConfirm = 'Please enter confirm your password';
+        }
+        //Check if passwords match
+       // if (int strcmp($password , $confirm ) != 0) {
+          //  $errMatch = 'Your password does not match';
+        //}
+ 
+	// If there are no errors, send you are signed in
+	if (!$errName && !$errEmail && !$errPassword && !$errConfirm && !$errUsername) {
+		//Code to send user stuff to server goes here whenever they tell me.
+		header('Location: portfolio_wireframe.php');
+		$result='You have successfully signed up.';
+    
+	}
+	else{
+		$result='There was something wrong with the sign up process. Please try again.';
+	}
+		
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,7 +106,8 @@
 	<br></br>
 	<div class="container">
 	<div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
-	<form class="form-horizontal" action='' method="POST">
+	<?php echo $result?>
+	<form class="form-horizontal" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method="POST">
 	<fieldset>
     <div id="legend">
       <legend class="">Sign Up</legend>
@@ -68,8 +117,9 @@
       <!--Name -->
       <label class="control-label"  for="first_name">Name</label>
       <div class="controls">
-        <input type="text" id="name" name="name" class="form-control" placeholder="Name">
+        <input type="text" id="name" name="name" class="form-control" placeholder="Name" value="<?php echo htmlspecialchars($_POST['name']); ?>">
         <p class="help-block">Please provide your name</p>
+		<?php echo "<p class='text-danger'>$errName</p>";?>
       </div>
     </div>
 	
@@ -77,8 +127,9 @@
       <!-- Username -->
       <label class="control-label"  for="username">Username</label>
       <div class="controls">
-        <input type="text" id="username" name="username" class="form-control" placeholder="Username">
+        <input type="text" id="username" name="username" class="form-control" placeholder="Username" value="<?php echo htmlspecialchars($_POST['username']); ?>">
         <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+		<?php echo "<p class='text-danger'>$errUsername</p>";?>
       </div>
     </div>
  
@@ -86,8 +137,9 @@
       <!-- E-mail -->
       <label class="control-label" for="email">E-mail</label>
       <div class="controls">
-		<input type="text" id="email" name="email" class="form-control" placeholder="email@gmail.com">
+		<input type="text" id="email" name="email" class="form-control" placeholder="email@gmail.com" value="<?php echo htmlspecialchars($_POST['email']); ?>">
         <p class="help-block">Please provide your E-mail</p>
+		<?php echo "<p class='text-danger'>$errEmail</p>";?>
       </div>
     </div>
  
@@ -98,6 +150,7 @@
         <input type="password" id="password" name="password" class="form-control" placeholder="********">
         <p class="help-block">Password should be at least 4 characters</p>
       </div>
+	  <?php echo "<p class='text-danger'>$errPassword</p>";?>
     </div>
  
     <div class="control-group">
@@ -106,13 +159,15 @@
       <div class="controls">
         <input type="password" id="password_confirm" name="password_confirm" class="form-control" placeholder="********">
         <p class="help-block">Please confirm password</p>
+		<?php echo "<p class='text-danger'>$errConfirm</p>";?>
+		<?php echo "<p class='text-danger'>$errMatch</p>";?>
       </div>
     </div>
  
     <div class="control-group">
       <!-- Button -->
       <div class="controls">
-        <button class="btn btn-success">Login</button>
+        <input id="submit" name="submit" type="submit" value="Send" class="btn btn-success pull-right">
       </div>
     </div>
   </fieldset>
