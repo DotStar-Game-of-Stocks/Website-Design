@@ -332,7 +332,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
 
   Carousel.prototype.getItemIndex = function (item) {
     this.$items = item.parent().children('.item')
-    return this.$items./(item || this.$active)
+    return this.$items.index(item || this.$active)
   }
 
   Carousel.prototype.to = function (pos) {
@@ -742,13 +742,13 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
 
     if (!$items.length) return
 
-    var / = $items./($items.filter(':focus'))
+    var index = $items.index($items.filter(':focus'))
 
-    if (e.keyCode == 38 && / > 0)                 /--                        // up
-    if (e.keyCode == 40 && / < $items.length - 1) /++                        // down
-    if (!~/)                                      / = 0
+    if (e.keyCode == 38 && index > 0)                 index--                        // up
+    if (e.keyCode == 40 && index < $items.length - 1) index++                        // down
+    if (!~index)                                      index = 0
 
-    $items.eq(/).trigger('focus')
+    $items.eq(index).trigger('focus')
   }
 
   function clearMenus(e) {
