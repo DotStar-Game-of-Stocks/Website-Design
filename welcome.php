@@ -1,43 +1,5 @@
 <?php
-	$dbhost = 'localhost';
-	$dbuser = 'root';
-	$dbpass = 'stockforcast';
-	$database = 'forecast';
-	$conn = mysql_connect($dbhost, $dbuser, $dbpass);
-	if(! $conn )
-	{
-	die('Could not connect: ' . mysql_error());
-	}
-	mysql_select_db($database, $conn) or die("Oops some thing went wrong");
-	//include("config.php");
-	//session starts
-	session_start();
-	if($_SERVER["REQUEST_METHOD"] == "POST")
-	{
-		$username = addslashes($_POST['inputUsername']);
-		$password = addslashes($_POST['inputPassword']);
-		
-		$sql="SELECT id FROM users WHERE login='$username' and password='$password'";
-		//$sql = "SELECT `login`, `password` FROM `users` WHERE 1"
-		$result = mysql_query($sql);
-		$row=mysql_fetch_array($result);
-		$active=$row['active'];
-		$count=mysql_num_rows($result);
-	
-	// If result matched $username and $password, table row must be 1 row
-	if($count==1)
-	{
-		session_register("username");
-		session_register("password");
-		$_SESSION['login_user']=$username;// Initializing Session with value of PHP Variable
- 
-		header("location: welcome.php");
-	}
-	else
-	{
-		$error="Your Login Name or Password is invalid";
-	}
-}
+include('lock.php');
 ?>
 
 <!DOCTYPE html>
@@ -102,20 +64,7 @@
 	<br></br>
 	<div class="container">
 	<div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
-		<?php echo $error ?>
-      <form class="form-signin" action = '<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method = "POST">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputUsername" class="sr-only">Username</label>
-        <input type="username" id="inputUsername" class="form-control" placeholder="Username" required="">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <input id="submit" name="submit" type="submit" class="btn btn-success btn-primary btn-block" value = "Login">
-      </form>
+		<h1>Welcom <?php echo $login_session; ?> </h1>
 	</div>
     </div> <!-- /container -->
 
