@@ -1,3 +1,6 @@
+<?php
+session_start(); 
+?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -59,21 +62,23 @@
         <section style="padding-bottom: 50px; padding-top: 50px;">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="profile_placeholder.jpg" class="img-rounded img-responsive" />
+                    <img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture?type=large" height = "600" width="600" class="img-rounded img-responsive" />
 				</div>
 				<div class="col-md-8">
 					<div class="alert alert-success">
-                        <h2>Username</h2>
-                        <h4>Account Details</h4>
-                        <p>Name: name</p>
-						<p>Email : email.gmail.com</p>
-						<p>Date joined : 4/5/2015</p>
-						<p>Password: *******</p>
+                        <h1>Username</h1>
+                        <h3>Account Details</h3>
+                        <h4>Name: <?php echo $_SESSION['FULLNAME']; ?></h4>
+						<h4>Email : <?php echo $_SESSION['EMAIL']; ?></h4>
+						<h4>Date joined : 4/5/2015</h4>
+						<h4>Password: *******</h4>
                     </div>
 				</div>
 			</div>
 			<form method = "link" action = "portfolio_wireframe"><button type="submit" class="btn btn-success">Go to Portfolio</button> </form>
-			<h3>Update User Details</h3>
+			<form method = "link" action = "newtrade"><button type="submit" class="btn btn-success">Make New Trade</button> </form>
+			<form method = "link" action = "scripted"><button type="submit" class="btn btn-success">Set scripted Trading</button> </form>
+			<!--<h3>Update User Details</h3>
             <label>Username</label>
              <input type="text" class="form-control" placeholder="Username">
             <label>Name</label>
@@ -93,6 +98,7 @@
             <input type="password" class="form-control" placeholder="********">
             <br></br>
             <a href="#" class="btn btn-warning">Change Password</a>
+			-->
             
             <!-- ROW END -->
         </section>

@@ -1,56 +1,16 @@
 <?php
-	include("config.php");
-	//session starts
-	session_start();
-	if($_SERVER["REQUEST_METHOD"] == "POST")
-	{
-		$username = addslashes($_POST['inputUsername']);
-		$password = addslashes($_POST['inputPassword']);
-		
-		$sql="SELECT id FROM users WHERE login='$username' and password='$password'";
-		//$sql = "SELECT `login`, `password` FROM `users` WHERE 1"
-		$result = mysql_query($sql);
-		$row=mysql_fetch_array($result);
-		$active=$row['active'];
-		$count=mysql_num_rows($result);
-	
-	// If result matched $username and $password, table row must be 1 row
-	if($count==1)
-	{
-		session_register("username");
-		session_register("password");
-		$_SESSION['login_user']=$username;// Initializing Session with value of PHP Variable
- 
-		header("location: welcome.php");
-	}
-	else
-	{
-		$error="Your Login Name or Password is invalid";
-	}
-}
+session_start(); 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
-
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-<body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <title>Login with Facebook</title>
+<link href="http://www.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"> 
+ </head>
+  <body>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -84,40 +44,34 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-
-    <!--login page-->
 	<br></br>
 	<br></br>
 	<br></br>
 	<br></br>
 	<div class="container">
-	<div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
-		<?php echo $error ?>
-      <form class="form-signin" action = '<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method = "POST">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputUsername" class="sr-only">Username</label>
-        <input type="username" id="inputUsername" class="form-control" placeholder="Username" required="">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <input id="submit" name="submit" type="submit" class="btn btn-success btn-primary btn-block" value = "Login">
-      </form>
+  <?php if ($_SESSION['FBID']): ?>      <!--  After user login  -->
+<div class="container">
+<h2>Hello <?php echo $_SESSION['USERNAME']; ?></h2>
+<div class="span4">
+ <ul class="nav nav-list">
+<li class="nav-header">Image</li>
+	<li><img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture"></li>
+<li class="nav-header">Facebook ID</li>
+<li><?php echo  $_SESSION['FBID']; ?></li>
+<li class="nav-header">Facebook fullname</li>
+<li><?php echo $_SESSION['FULLNAME']; ?></li>
+<li class="nav-header">Facebook Email</li>
+<li><?php echo $_SESSION['EMAIL']; ?></li>
+<div><a href="logout.php">Logout</a></div>
+</ul></div></div>
+    <?php else: ?>     <!-- Before login --> 
+<div class="container">
+<h1>Login with Facebook</h1>
+           Not Connected
+<div>
+      <a href="fbconfig.php">Login with Facebook</a></div>	 
+      </div>
+    <?php endif ?>
 	</div>
-    </div> <!-- /container -->
-
-
-	    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  
-
-</body>
+  </body>
 </html>

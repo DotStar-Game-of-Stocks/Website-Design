@@ -1,36 +1,39 @@
 <?php
+	session_start(); 
 	if ($_POST["submit"]) {
         $stocks = $_POST['symbol'];
-        $lowPrice = intval($_POST['buy']);
-        $hiPrice = intval($_POST['sell']);
+		$action = $_POST['action'];
+        $number = intval($_POST['number']);
+        $price = intval($_POST['price']);
 
         // Check if symbol has been entered
         if (!$_POST['symbol']) {
-            $errSymbol = '{Please enter your stock symbol}';
+            $errSymbol = 'Please enter your stock symbol';
         }
         
-        // Check if email has been entered and is valid
-        if (!$_POST['buy']) {
-            $errBuy = 'Please enter a valid price';
+        // Check if an action has been entered and is valid
+        if (!$_POST['action']) {
+            $errAction = 'Please enter a valid action';
+        }
+		// Check if an action has been entered and is valid
+        if ($number < 0 || !$_POST['number']) {
+            $errNumber = 'Please enter a valid number of Stocks';
         }
         
-        //Check if sell price has been posted has been entered
-        if (!$_POST['sell']) {
-            $errSell = 'Please enter a valid price';
+        //Check if price has been entered
+        if ($price < 0 || !$_POST['price']) {
+            $errPrice = 'Please enter a valid price';
         }
   
- 
 // If there are no errors, send the script
-if ($lowPrice > $hiPrice) {
-	$result='Please change the selling and purchasing price so selling price is higher than purchasing';
-}
-else if (!$errSymbol && !$errSell && !$errBuy) {
-	//scripted trading code belongs here but that wasn't sent to me
+if (!$errSymbol && !$errNumber && !$errPrice && !$errAction) {
+	$input = "$stocks $action $number $ $price";
+	exec("python StockScreener.py $input");
     $result='Your changes have been made';
     
 }
 else {
-    $result='Sorry there was an error saving your price choices. Please try again later';
+    $result='Sorry there was an error. Please try again later';
     }
 }
 ?>
@@ -106,26 +109,35 @@ else {
 					<div class="controls">
 						<input type="text" id="symbol" name="symbol" class="form-control" placeholder="GOOG, AMZN, AAPL" value="<?php echo htmlspecialchars($_POST['symbol']); ?>">
 						<p class="help-block">Separate stocks with a comma and space</p>
-						<?php echo "<p class='text-danger'>$errSyymbol</p>";?>
+						<?php echo "<p class='text-danger'>$errSymbol</p>";?>
 					</div>
 				</div>
 	
 				<div class="control-group">
-				<!-- When to sell -->
-					<label class="control-label"  for="Sell">When to Sell Stocks</label>
+				<!-- Buy or Sell -->
+					<label class="control-label"  for="action">Buy or Sell</label>
 					<div class="controls">
-						<input type="text" id="sell" name="sell" class="form-control" placeholder="Decreases by $10" value="<?php echo htmlspecialchars($_POST['sell']);?>">
-						<p class="help-block">Input the price you want to sell stock at.</p>
-						<?php echo "<p class='text-danger'>$errSell</p>";?>
+						<input type="text" id="action" name="action" class="form-control" placeholder="Buy" value="<?php echo htmlspecialchars($_POST['action']); ?>">
+						<p class="help-block">Choose whether to Buy or Sell.</p>
+						<?php echo "<p class='text-danger'>$errAction</p>";?>
+					</div>
+				</div>
+				<!-- Amount of Stocks bought or sold -->
+				<div class="control-group">
+					<label class="control-label"  for="number">Number of Stocks</label>
+					<div class="controls">
+						<input type="text" id="number" name="number" class="form-control" placeholder="200" value="<?php echo htmlspecialchars($_POST['number']);?>">
+						<p class="help-block">Input the number of Stocks to be bought or sold.</p>
+						<?php echo "<p class='text-danger'>$errNumber</p>";?>
 					</div>
 				</div>
 				<div class="control-group">
-				<!-- When to buy -->
-					<label class="control-label"  for="buy">When to Buy Stocks</label>
+				<!-- Price to buy or sell at -->
+					<label class="control-label"  for="price">Price to Buy or Sell Stocks</label>
 					<div class="controls">
-						<input type="text" id="buy" name="buy" class="form-control" placeholder="Increases to $10" value="<?php echo htmlspecialchars($_POST['buy']); ?>">
-						<p class="help-block">Input a price you want to buy stock at.</p>
-						<?php echo "<p class='text-danger'>$errBuy</p>";?>
+						<input type="text" id="price" name="price" class="form-control" placeholder="$100" value="<?php echo htmlspecialchars($_POST['price']); ?>">
+						<p class="help-block">Input a price you want to buy or sell a stock at.</p>
+						<?php echo "<p class='text-danger'>$errPrice</p>";?>
 					</div>
 				</div>
 				<div class="control-group">
