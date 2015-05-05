@@ -1,9 +1,13 @@
+<?php
+	session_start();
+	//$sql = "SELECT symbol, current, cl FROM stock";
+?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Stock Page Wireframe</title>
+    <title><?php echo $_GET["stock"]; ?></title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -44,8 +48,13 @@
          </ul>
 		 <ul class="nav navbar-nav navbar-right">
 			<li><a href = "profile_wireframe">Profile</a></li>
-			<li><a href = "signup">Sign Up</a></li>
-			<li><a href = "login">Login</a></li>
+			<li>
+				<?php if ($_SESSION['FBID']): ?>
+					<a href = "logout"> Logout</a>
+				<?php else: ?>
+					<a href = "login">Login</a>
+				<?php endif ?>
+			</li>
         </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -53,103 +62,47 @@
 	<br></br>
     <!-- NAVBAR CODE END -->
 
+		<?php
+		$reqsturl = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%3D%22".$_GET["stock"]."%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+		$str = file_get_contents($reqsturl);
+		$json = json_decode($str, true);
+
+		$pclose = $json['query']['results']['quote']['PreviousClose'];
+		$open = $json['query']['results']['quote']['Open'];
+		$bid = $json['query']['results']['quote']['Bid'];
+		$ask = $json['query']['results']['quote']['Ask'];
+		$pchange = $json['query']['results']['quote']['PercentChange'];
+		$name = $json['query']['results']['quote']['Name'];
+		?>
 
     <div class="container">
         <section style="padding-bottom: 50px; padding-top: 50px;">
-			<h2>Company Name - Stock symbol</h2>
-			<h3><font color="green">00.00%</font><font color="red">00.00%</font></h3>
-			<img src="stock_chart_placeholder.jpg" class="img-rounded img-responsive""/>
+			<h2><?php echo $name; ?></h2>
+			<h3><font color= <?php if ($pchange > 0) echo "green"; else echo "red";?> ><?php echo $pchange; ?></font></h3>
+
+			<img src=<?php echo "http://chart.finance.yahoo.com/t?s=".$_GET["stock"]."&lang=en-US&region=US&width=600&height=300";?> class="img-rounded img-responsive""/>
 			<form method = "link" action = "newtrade"><button type="submit" class="btn btn-success">Make new trade</button> </form>
-			
+
 			<h4>Today's Trading</h4>
 			<table class="table table-stribed table-content table-condensed table-striped">
 				<tr>
 					<td>Previous Close</td>
-					<td class="statistic-values text-right">$00.00</td>
+					<td class="statistic-values text-right"> $<?php echo $pclose; ?>  </td>
 				</tr>
 				<tr>
 					<td>Open</td>
-					<td class="statistic-values text-right">$00.00</td>
+					<td class="statistic-values text-right"> $<?php echo $open; ?> </td>
 				</tr>
 				<tr>
 					<td>Bid</td>
-					<td class="statistic-values text-right">$00.00</td>
+					<td class="statistic-values text-right"> $<?php echo $bid; ?> </td>
 				</tr>
 				<tr>
 					<td>Ask</td>
-					<td class="statistic-values text-right">$00.00</td>
+					<td class="statistic-values text-right"> $<?php echo $ask; ?> </td>
 				</tr>
-				<tr>
-					<td>1y Target Estimate</td>
-					<td class="statistic-values text-right">$00.00</td>
-				</tr>
-				<tr>
-					<td>Day's Range</td>
-					<td class="statistic-values text-right">$00.00</td>
-				</tr>
-				<tr>
-					<td>52 Week Range</td>
-					<td class="statistic-values text-right"></td>
-				</tr>
-				<tr>
-					<td>Volume</td>
-					<td class="statistic-values text-right">$00.00-00.00</td>
-				</tr>
-				<tr>
-					<td>Average Volume</td>
-					<td class="statistic-values text-right">$1,000,000.00</td>
-				</tr>
-				<tr>
-					<td>Market Cap</td>
-					<td class="statistic-values text-right">$00.00</td>
-				</tr>
-				<tr>
-					<td>Dividend Yield</td>
-					<td class="statistic-values text-right">$00.00</td>
-				</tr>
+
 			</table>
-			<h4>Growth and Valuation</h4>
-			<table class="table table-stribed table-content table-condensed table-striped">
-				<tr>
-					<td>Earnings growth (last year)</td>
-					<td class="statistic-values text-right">00.00%</td>
-				</tr>
-				<tr>
-					<td>Earning growth (this year)</td>
-					<td class="statistic-values text-right">00.00%</td>
-				</tr>
-				<tr>
-					<td>Earning growth (next 5 years)</td>
-					<td class="statistic-values text-right">00.00%</td>
-				</tr>
-				<tr>
-					<td>Revenue Growth (last year)</td>
-					<td class="statistic-values text-right">00.00%</td>
-				</tr>
-				<tr>
-					<td>P/E ratio</td>
-					<td class="statistic-values text-right">1.0</td>
-				</tr>
-			</table>
-			<h4>Financials</h4>
-			<table class="table table-stribed table-content table-condensed table-striped">
-				<tr>
-					<td>EPS forecast(this quarter))</td>
-					<td class="statistic-values text-right">$0.00</td>
-				</tr>
-				<tr>
-					<td>Annual revenue (last year)</td>
-					<td class="statistic-values text-right">$00.00</td>
-				</tr>
-				<tr>
-					<td>Annual profit (last year)</td>
-					<td class="statistic-values text-right">$0.00</td>
-				</tr>
-				<tr>
-					<td>Net profit margin</td>
-					<td class="statistic-values text-right">00.00%</td>
-				</tr>
-			</table>	
 			<a href="#top">To the top</a>
         </section>
         <!-- SECTION END -->

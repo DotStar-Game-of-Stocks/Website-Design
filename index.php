@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,18 +39,25 @@
             <li><a href="faqs">FAQS</a></li>
 			<li><a href="dashboard">Dashboard</a></li>
 			<li>
-				<form class="navbar-form navbar-left" role="search">
+
+				<form class="navbar-form navbar-left" role="search" action="stock_page_wireframe.php?stock">
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="Search">
 					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
+					<button type="submit" class="btn btn-default"><a href="stock_page_wireframe.php?stock">Submit</a></button>
 				</form>
+
 			</li>
          </ul>
 		 <ul class="nav navbar-nav navbar-right">
 			<li><a href = "profile_wireframe">Profile</a></li>
-			<li><a href = "signup">Sign Up</a></li>
-			<li><a href = "login">Login</a></li>
+			<li>
+				<?php if ($_SESSION['FBID']): ?>
+					<a href = "logout"> Logout</a>
+				<?php else: ?>
+					<a href = "login">Login</a>
+				<?php endif ?>
+			</li>
         </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -58,7 +68,13 @@
       <div class="container">
         <h1>Stock Forecast</h1>
         <p>Here, you can trade real life stocks without actually losing money! Learn how to trade and get ready for the real market.</p>
-        <p><a class="btn btn-primary btn-lg" href="portfolio_wireframe" role="button">Get Started &raquo;</a></p>
+        <p>
+		<?php if ($_SESSION['FBID']): ?>
+			<a class="btn btn-primary btn-lg" role="button" href = "portfolio_wireframe"> Get Started &raquo;</a>
+		<?php else: ?>
+			<a class="btn btn-primary btn-lg"  role="button" href = "login">Get Started &raquo;</a>
+		<?php endif ?>
+		</p>
       </div>
     </div>
 
@@ -119,7 +135,7 @@ echo '<small><em>Posted on '.$date.'</em></small></p>';
 echo '<p>'.$description.'</p>';
 }
 ?></p>
-       
+
        </div>
         <div class="col-md-4">
           <h2>Yahoo News</h2>

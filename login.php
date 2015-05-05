@@ -38,8 +38,13 @@ session_start();
          </ul>
 		 <ul class="nav navbar-nav navbar-right">
 			<li><a href = "profile_wireframe">Profile</a></li>
-			<li><a href = "signup">Sign Up</a></li>
-			<li class="active"><a href = "login">Login</a></li>
+			<li>
+				<?php if ($_SESSION['FBID']): ?> 
+					<a href = "logout"> Logout</a>
+				<?php else: ?>  
+					<a href = "login">Login</a>
+				<?php endif ?>
+			</li>
         </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -66,10 +71,10 @@ session_start();
 </ul></div></div>
     <?php else: ?>     <!-- Before login --> 
 <div class="container">
-<h1>Login with Facebook</h1>
-           Not Connected
+<h1>You have to login!</h1>
 <div>
-      <a href="fbconfig.php">Login with Facebook</a></div>	 
+      <a href="fbconfig"><img src="signfacebook.png" alt="Facebook" style="width:30%;height:30%"></a>
+	  </div>	 
       </div>
     <?php endif ?>
 	</div>

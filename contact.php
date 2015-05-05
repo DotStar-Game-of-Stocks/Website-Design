@@ -1,11 +1,13 @@
 <?php
+	session_start();
+
 	if ($_POST["submit"]) {
         $name = $_POST['name'];
         $email = $_POST['email'];
         $message = $_POST['message'];
         $human = intval($_POST['human']);
         $from = 'Demo Contact Form'; 
-        $to = 'example@bootstrapbay.com'; 
+        $to = 'stockforecast196@gmail.com'; 
         $subject = 'Message from Contact Demo ';
         
         $body = "From: $name\n E-Mail: $email\n Message:\n $message";
@@ -79,8 +81,13 @@ else {
          </ul>
 		 <ul class="nav navbar-nav navbar-right">
 			<li><a href = "profile_wireframe">Profile</a></li>
-			<li><a href = "signup">Sign Up</a></li>
-			<li><a href = "login">Login</a></li>
+			<li>
+				<?php if ($_SESSION['FBID']): ?> 
+					<a href = "logout"> Logout</a>
+				<?php else: ?>  
+					<a href = "login">Login</a>
+				<?php endif ?>
+			</li>
         </ul>
       </div>
 	  </div>

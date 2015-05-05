@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -46,8 +49,13 @@
          </ul>
 		 <ul class="nav navbar-nav navbar-right">
 			<li><a href = "profile_wireframe">Profile</a></li>
-			<li><a href = "signup">Sign Up</a></li>
-			<li><a href = "login">Login</a></li>
+			<li>
+				<?php if ($_SESSION['FBID']): ?> 
+					<a href = "logout"> Logout</a>
+				<?php else: ?>  
+					<a href = "login">Login</a>
+				<?php endif ?>
+			</li>
         </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -65,23 +73,16 @@
 		</ol>
 		<h3><a href="#setup">Set Up</a></h3>
 		<ol>
-			<li>blah blah</li>
-			<li>blah blah</li>
-			<li>blah blah</li>
+			<li>Facebook Login</li>
+			<li>Account Setup</li>
+			<li>Setting up Scripted Trading</li>
 		</ol>
         <h3><a href="#howto">How to Play</a></h3>
         <ol>
-			<li>blah blah</li>
-			<li>blah blah</li>
-			<li>blah blah</li>
+			<li>The Basics</li>
+			<li>Adding Money</li>
 		</ol>
-        <h3><a href="#Q4">Q4</a></h3>
-        <ol>
-			<li>blah blah</li>
-			<li>blah blah</li>
-			<li>blah blah</li>
-		</ol>
-		
+
 		<hr>
 		<h2><a name = "stocks"></a>Stocks</h2>
 		<strong>1. What are stocks? </strong>
@@ -98,15 +99,22 @@
 		<a href="#top">To the top</a>
 		<hr>
 		<h2><a name="setup"></a>Set Up</h2>
+    <strong>1. Facebook Login </strong>
+		<p>To start trading, login with your Facebook. Don't worry, Stock Forecast won't post to or look at your profile.</p>
+    <strong>2. Account Setup </strong>
+		<p>After logging in for the first time, you are given $100,000,000 to trade with.</p>
+    <strong>3. Setting up Scripted Trading </strong>
+		<p>To set up scripted, or automated, trading - go to your account profile and click on the 'Set up Scripted Trading' button. Then select the stock you wish to buy or sell, and the price you wish to buy or sell at.</p>
 		<a href="#top">To the top</a>
 		<hr>
 		<h2><a name = "howto"></a>How to Play</h2>
+    <strong>1. The Basics </strong>
+		<p>From your portfolio, you can make trades.</p>
+    <strong>1. Adding Money </strong>
+		<p> Unfortunately, you cannot add more money to your account. $100,000,000 should be enough to keep you trading.</p>
 		<a href="#top">To the top</a>
 		<hr>
-		<h3><a name = Q4></a>Q4</h3>
-		<a href="#top">To the top</a>
-		<hr>
-		
+
 		<p> If you still have questions, <a href="contact">Contact Us</a/>. <a href="#top">To the top</a></p>
       <footer>
         <p>&copy; Stock Forecast 2015</p>

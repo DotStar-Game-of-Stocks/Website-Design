@@ -1,5 +1,45 @@
 <?php
-session_start(); 
+	include(portfolio_wireframe);
+	define('DB_SERVER', 'localhost');
+	define('DB_USERNAME', 'root');    // DB username
+	define('DB_PASSWORD', 'stockforcast');    // DB password
+	define('DB_DATABASE', 'forecast');      // DB name
+	$connection = mysql_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD) or die( "Unable to connect");
+	$database = mysql_select_db(DB_DATABASE) or die( "Unable to select database");
+	session_start();
+	
+	$username = addslashes ($_SESSION['FULLNAME']);
+	$buy = addslashes ("buy");
+	$sql = "SELECT Stock,Amount,Price FROM portfolio WHERE Username = '$username' AND Action = '$buy';";
+	mysql_select_db('forecast');
+	$retval = mysql_query( $sql, $connection );
+	if(! $retval )
+	{
+		die('Could not retrive data: ' . mysql_error());
+	}
+	echo "It worked!\n";
+
+$htmlTable = '';
+$totalValue = 0;
+$cashUsed = 0;
+	while ($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
+			$reqsturl = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%3D%22".$row["Stock"]."%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+			$str = file_get_contents($reqsturl);
+			$json = json_decode($str, true);
+			$price = $json['query']['results']['quote']['Ask'];
+
+			if(!$price)
+			{
+				echo 'ERROR';
+			}
+			else{
+				$cashUsed += $row["Price"]* $row["Amount"];
+				$totalValue += $price * $row["Amount"];
+			}
+		}
+
+	mysql_free_result($retval);
+	mysql_close($conn);
 ?>
 <html lang="en">
   <head>
@@ -48,8 +88,13 @@ session_start();
          </ul>
 		 <ul class="nav navbar-nav navbar-right">
 			<li class="active"><a href = "profile_wireframe">Profile</a></li>
-			<li><a href = "signup">Sign Up</a></li>
-			<li><a href = "login">Login</a></li>
+			<li>
+				<?php if ($_SESSION['FBID']): ?> 
+					<a href = "logout"> Logout</a>
+				<?php else: ?>  
+					<a href = "login">Login</a>
+				<?php endif ?>
+			</li>
         </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -62,23 +107,24 @@ session_start();
         <section style="padding-bottom: 50px; padding-top: 50px;">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture?type=large" height = "600" width="600" class="img-rounded img-responsive" />
+                    <img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture?type=large" height = "300" width="300" class="img-rounded img-responsive" />
 				</div>
 				<div class="col-md-8">
 					<div class="alert alert-success">
-                        <h1>Username</h1>
-                        <h3>Account Details</h3>
-                        <h4>Name: <?php echo $_SESSION['FULLNAME']; ?></h4>
-						<h4>Email : <?php echo $_SESSION['EMAIL']; ?></h4>
-						<h4>Date joined : 4/5/2015</h4>
-						<h4>Password: *******</h4>
+                        <h1><?php echo $_SESSION['FULLNAME']; ?></h1>
+                        <h3>Account Details: </h3>
+                        <h4>Email : <?php echo $_SESSION['EMAIL']; ?></h4>
+                        <h4>Date joined : 05/01/2015</h4>
+                        <h4>Portfolio Value : $<?php echo $totalValue; ?></h4>
+						<h4>Available Cash : $<?php echo 1000000 - $cashUsed; ?></h4>
                     </div>
 				</div>
 			</div>
 			<form method = "link" action = "portfolio_wireframe"><button type="submit" class="btn btn-success">Go to Portfolio</button> </form>
 			<form method = "link" action = "newtrade"><button type="submit" class="btn btn-success">Make New Trade</button> </form>
-			<form method = "link" action = "scripted"><button type="submit" class="btn btn-success">Set scripted Trading</button> </form>
-			<!--<h3>Update User Details</h3>
+			<form method = "link" action = "scripted"><button type="submit" class="btn btn-success">Set Up Scripted Trading</button> </form>
+
+      <!--<h3>Update User Details</h3>
             <label>Username</label>
              <input type="text" class="form-control" placeholder="Username">
             <label>Name</label>
@@ -99,7 +145,7 @@ session_start();
             <br></br>
             <a href="#" class="btn btn-warning">Change Password</a>
 			-->
-            
+
             <!-- ROW END -->
         </section>
         <!-- SECTION END -->

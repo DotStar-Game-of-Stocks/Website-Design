@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -46,8 +49,13 @@
          </ul>
 		 <ul class="nav navbar-nav navbar-right">
 			<li><a href = "profile_wireframe">Profile</a></li>
-			<li><a href = "signup">Sign Up</a></li>
-			<li><a href = "login">Login</a></li>
+			<li>
+				<?php if ($_SESSION['FBID']): ?> 
+					<a href = "logout"> Logout</a>
+				<?php else: ?>  
+					<a href = "login">Login</a>
+				<?php endif ?>
+			</li>
         </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -63,98 +71,98 @@
 		<div class="col-lg-6 col-sm-6">
 			<h3 class="statistic-values text-center">Most Purchased Stocks</h3>
 			<table class="table table-stribed table-content table-condensed table-striped">
-				<tr>
+        <tr>
 					<th class="statistic-values text-center">Symbol</th>
 					<th class="statistic-values text-center">Current Purchasing Price</th>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">BAC</td>
+					<td class="statistic-values text-center">$16.10</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">AAPL</td>
+					<td class="statistic-values text-center">$128.90</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">AA</td>
+					<td class="statistic-values text-center">$14.10</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">MSFT</td>
+					<td class="statistic-values text-center">$48.65</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">CHK</td>
+					<td class="statistic-values text-center">$16.50</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">TWTR</td>
+					<td class="statistic-values text-center">$37.80</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">NOK</td>
+					<td class="statistic-values text-center">$6.50</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">VALE</td>
+					<td class="statistic-values text-center">$8.00</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">T</td>
+					<td class="statistic-values text-center">$34.40</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">QQQ</td>
+					<td class="statistic-values text-center">$109.00</td>
 				</tr>
 			</table>
 		</div>
 		<div class="col-lg-6 col-sm-6">
 			<h3 class="statistic-values text-center">Most Sold Stocks</h3>
 			<table class="table table-stribed table-content table-condensed table-striped">
-				<tr>
-					<th class="statistic-values text-center"><strong>Symbol</strong></th>
-					<th class="statistic-values text-center">Current Selling Price</strong></th>
+        <tr>
+					<th class="statistic-values text-center">Symbol</th>
+					<th class="statistic-values text-center">Current Purchasing Price</th>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">BAC</td>
+					<td class="statistic-values text-center">$16.10</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">AAPL</td>
+					<td class="statistic-values text-center">$128.90</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">AA</td>
+					<td class="statistic-values text-center">$14.10</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">MSFT</td>
+					<td class="statistic-values text-center">$48.65</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">CHK</td>
+					<td class="statistic-values text-center">$16.50</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">TWTR</td>
+					<td class="statistic-values text-center">$37.80</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">NOK</td>
+					<td class="statistic-values text-center">$6.50</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">VALE</td>
+					<td class="statistic-values text-center">$8.00</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">T</td>
+					<td class="statistic-values text-center">$34.40</td>
 				</tr>
 				<tr>
-					<td class="statistic-values text-center">Name</td>
-					<td class="statistic-values text-center">$0.00</td>
+					<td class="statistic-values text-center">QQQ</td>
+					<td class="statistic-values text-center">$109.00</td>
 				</tr>
 			</table>
 		</div>
@@ -215,7 +223,7 @@ echo '<small><em>Posted on '.$date.'</em></small></p>';
 echo '<p>'.$description.'</p>';
 }
 ?></p>
-       
+
        </div>
         <div class="col-md-4">
           <h2>Yahoo News</h2>
@@ -249,7 +257,7 @@ echo '<p>'.$description.'</p>';
 	  </div>
 
       <hr>
-		
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

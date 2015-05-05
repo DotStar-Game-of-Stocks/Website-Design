@@ -1,3 +1,93 @@
+<?php
+	define('DB_SERVER', 'localhost');
+	define('DB_USERNAME', 'root');    // DB username
+	define('DB_PASSWORD', 'stockforcast');    // DB password
+	define('DB_DATABASE', 'forecast');      // DB name
+	$connection = mysql_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD) or die( "Unable to connect");
+	$database = mysql_select_db(DB_DATABASE) or die( "Unable to select database");
+	session_start();
+	if(isset($_POST['submit']))
+	{
+		if(! get_magic_quotes_gpc() )
+		{
+			$option = addslashes ($_POST['optradio']);
+			$username = addslashes ($_SESSION['FULLNAME']);
+			$stock = addslashes ($_POST['symbol']);
+
+			$shares = addslashes (intval($_POST['shares']));
+		}
+		else
+		{
+			$option = addslashes ($_POST['optradio']);
+			$username = addslashes ($_SESSION['FULLNAME']);
+			$stock = addslashes ($_POST['symbol']);
+
+			$shares = addslashes (intval($_POST['shares']));
+		}
+		if (!$_POST['optradio']) {
+            $errOption = 'Pick an option';
+        }
+		if (!$_POST['symbol']) {
+            $errSymbol = 'Pick an option';
+        }
+		if (!$_POST['shares'] || $shares<0) {
+            $errShares = 'Please enter a valid number of shares';
+        }
+		if (!$errOption && !$errSymbol && !$errShares)
+		{
+			$reqsturl = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%3D%22".$_POST['symbol']."%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+			$str = file_get_contents($reqsturl);
+			$json = json_decode($str, true);
+			$price = $json['query']['results']['quote']['Ask'];
+			if ($price==0) {
+	            $errStock = 'Please try a differnt stock.';
+	        }
+			if ($option=='buy' && !$errStock)
+			{
+				$sql = "INSERT INTO portfolio ".
+					"(Username, Stock, Price, Amount, Action) ".
+					"VALUES('$username','$stock','$price','$shares', '$option')";
+				mysql_select_db('forecast');
+				$retval = mysql_query( $sql, $connection );
+				if(! $retval )
+				{
+					die('Could not enter data: ' . mysql_error());
+				}
+				echo "Entered data successfully\n";
+				mysql_close($conn);
+				$resultTrade = 'Stock bought';
+				header('Location: portfolio_wireframe');
+			}
+			else if ($option=='sell' && !$errStock)
+			{
+				$reqsturl = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%3D%22".$_POST['symbol']."%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+				$str = file_get_contents($reqsturl);
+				$json = json_decode($str, true);
+				$price = $json['query']['results']['quote']['Ask'];
+
+				$sql = "INSERT INTO portfolio ".
+					"(Username, Stock, Price, Amount, Action) ".
+					"VALUES('$username','$stock','$price','$shares', '$option')";
+				mysql_select_db('forecast');
+				$retval = mysql_query( $sql, $connection );
+				if(! $retval )
+				{
+					die('Could not enter data: ' . mysql_error());
+				}
+				echo "Entered data successfully\n";
+				mysql_close($conn);
+				$resultTrade = 'Stock sold';
+				header('Location: portfolio_wireframe');
+			}
+			else{
+				$resultTrade = 'Please try a differnt stock.';
+			}
+		}
+
+
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -46,8 +136,13 @@
          </ul>
 		 <ul class="nav navbar-nav navbar-right">
 			<li><a href = "profile_wireframe">Profile</a></li>
-			<li><a href = "signup">Sign Up</a></li>
-			<li><a href = "login">Login</a></li>
+			<li>
+				<?php if ($_SESSION['FBID']): ?>
+					<a href = "logout"> Logout</a>
+				<?php else: ?>
+					<a href = "login">Login</a>
+				<?php endif ?>
+			</li>
         </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -56,42 +151,51 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Stock Forecast</h1>
-        <p><b>Stock Data Summary</b>
-<div class="row">
-  <div class="col-md-4">Ask Price</br>Bid Price</br>Close Price</br></div>
-  <div class="col-md-4">Trade Type</br>Stock Symbol</br>Number of Shares</div>
-  <div class="col-md-4">Maybe I'll put something here</div>
+        <h1>Make New Trade</h1>
+        <p><b>Buy or Sell your choice of Stock</b>
 </div>
 </p>
       </div>
     </div>
-
-    <div class="container">
+<div class="container">
+	<section style="padding-bottom: 50px; padding-top: 50px;">
+		<div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
+    <h3><?php echo $resultTrade; ?></h3>
       <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
+
 What do you want to do?
- <div class="radio">
-  <label><input type="radio" name="optradio">Buy</label>   <label><input type="radio" name="optradio">Sell</label>
+<form class="form-horizontal" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method="POST">
+<div class="radio">
+  <label><input type="radio" name="optradio" value = "buy">Buy</label>
+  <label><input type="radio" name="optradio" value = "sell">Sell</label>
+  <p></p>
+  <?php echo "<p class='text-danger'>$errOption</p>";?>
 </div>
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Stock Symbol</span>
-  <input type="text" class="form-control" placeholder="(GOOG)" aria-describedby="basic-addon1">
+  <input type="text" class="form-control" name = "symbol" placeholder="(GOOG)" aria-describedby="basic-addon1" value="<?php echo htmlspecialchars($_POST['symbol']); ?>">
+  <p></p>
+  <?php echo "<p class='text-danger'>$errSymbol</p>";?>
 </div>
 <div class="input-group">
-  <input type="text" class="form-control" placeholder="Number of Shares" aria-describedby="basic-addon2">
+  <input type="text" name = "shares" class="form-control" placeholder="Number of Shares" aria-describedby="basic-addon2" value="<?php echo htmlspecialchars($_POST['shares']); ?>">
+  <p></p>
+  <?php echo "<p class='text-danger'>$errShares</p>";?>
 </div>
-<button class="btn btn-success btn-block"><span class="glyphicon glyphicon-thumbs-up"></span> Make Trade</button>
+<div class="controls">
+<input id="submit" name="submit" type="submit" value="Make New Trade" class="btn btn-success pull-right">
+</div>
+</form>
         </div>
-      </div>
+		</section>
 
-      <hr>
+	</div> <!-- /container -->
+	<hr>
 
-      <footer>
+	<footer>
         <p>&copy; Stock Forecast 2015</p>
       </footer>
-    </div> <!-- /container -->
+
 
 
     <!-- Bootstrap core JavaScript

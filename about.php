@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -46,8 +49,13 @@
          </ul>
 		 <ul class="nav navbar-nav navbar-right">
 			<li><a href = "profile_wireframe">Profile</a></li>
-			<li><a href = "signup">Sign Up</a></li>
-			<li><a href = "login">Login</a></li>
+			<li>
+				<?php if ($_SESSION['FBID']): ?>
+					<a href = "logout"> Logout</a>
+				<?php else: ?>
+					<a href = "login">Login</a>
+				<?php endif ?>
+			</li>
         </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -57,7 +65,7 @@
     <div class="jumbotron">
       <div class="container">
         <h1>About Us</h1>
-        <p>Stock Forecast is created by a group of people from University of Illinois. More to come on this description.</p>
+        <p>Stock Forecast is created by a group of students from the University of Illinois.</p>
       </div>
     </div>
 
@@ -70,66 +78,66 @@
             <div class="col-lg-4 col-sm-6 text-center">
                 <img class="img-circle img-center " src="http://graph.facebook.com/david.fey.18/picture?width=200&height=200" alt="">
                 <h3>David Fey
-                    <small>Job Title</small>
+                    <small>Backend Developer</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p></p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
                 <img class="img-circle img-center " src="http://graph.facebook.com/boldnc/picture?width=200&height=200" alt="">
                 <h3>Nathan Cho
-                    <small>Job Title</small>
+                    <small>Frontend Developer</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p></p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
                 <img class="img-circle img-center " src="http://graph.facebook.com/lawortsmann/picture?width=200&height=200" alt="">
                 <h3>Luke Wortsmann
-                    <small>Job Title</small>
+                    <small>Backend Developer</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p></p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
                 <img class="img-circle img-center " src="http://graph.facebook.com/thomas.varghese.92102/picture?width=200&height=200" alt="">
                 <h3>Thomas Varghese
-                    <small>Job NAME</small>
+                    <small>Backend Developer</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p></p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
                 <img class="img-circle img-center" src="http://graph.facebook.com/alice.lee.9047506/picture?width=200&height=200" alt="">
                 <h3>Alice Li
-                    <small>Job Title</small>
+                    <small>Backend Developer</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p></p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
                 <img class="img-circle img-center " src="http://graph.facebook.com/nate.harroun.9/picture?width=200&height=200" alt="">
                 <h3>Nate Harroun
-                    <small>Job Title</small>
+                    <small>Backend Developer</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p></p>
             </div>
 			<div class="col-lg-4 col-sm-6 text-center">
                 <img class="img-circle img-center" src="http://graph.facebook.com/alison.wen/picture?width=200&height=200" alt="">
                 <h3>Alison Wen
-                    <small>Job Title</small>
+                    <small>Frontend Developer</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p></p>
             </div>
 						<div class="col-lg-4 col-sm-6 text-center">
                 <img class="img-circle img-center " src="http://graph.facebook.com/100005120959448/picture?width=200&height=200" alt="">
                 <h3>Yu Wu
-                    <small>Job Title</small>
+                    <small>Backend Developer</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p></p>
             </div>
 						<div class="col-lg-4 col-sm-6 text-center">
                 <img class="img-circle img-center " src="http://graph.facebook.com/adashuang/picture?width=200&height=200" alt="">
                 <h3>Shuang Qu
-                    <small>Job Title</small>
+                    <small>Backend Developer</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>			
+                <p></p>
+            </div>
         </div>
 
       <hr>
