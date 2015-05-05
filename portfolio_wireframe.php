@@ -35,23 +35,33 @@ $cashUsed = 0;
 			else{
 				$cashUsed += $row["Price"]* $row["Amount"];
 				$totalValue += $price * $row["Amount"];
+				$gain = $price-$row["Price"];
+				$percent = $gain *100 / $row["Price"];
 				$table = '<tr>' . "\n";
 				$table .= '<td><a href="stock_page_wireframe?stock=' . htmlspecialchars($row["Stock"]) . '">' . htmlspecialchars($row["Stock"]) . '</a></td>' . "\n";
 				$table .= '<td>' . htmlspecialchars($row["Amount"]) . '</td>' . "\n";
 				$table .= '<td>$' . htmlspecialchars($row["Price"]) . '</td>' . "\n";
 				$table .= '<td>$' . htmlspecialchars($price) . '</td>' . "\n";
-				$table .= '<td><font color="green">$0.00</font><font color="red">$0.00</font></td>' . "\n";
-				$table .= '<td><font color="green">00.00%</font><font color="red">00.00%</font></td>' . "\n";
-				$table .= '<td>Buy/Sell</td>' . "\n";
+				if($gain > 0)
+				{
+					$table .= '<td><font color = "green">$' . htmlspecialchars($gain) . '</font></td>' . "\n";
+					$table .= '<td><font color = "green">' . htmlspecialchars($percent) . '%</font></td>' . "\n";
+				}
+				else
+				{
+					$table .= '<td><font color = "red">$' . htmlspecialchars($gain) . '</font></td>' . "\n";
+					$table .= '<td><font color = "red">' . htmlspecialchars($percent) . '%</font></td>' . "\n";
+				}
+
 				$table .= '</tr>' . "\n";
 				$htmlTable .= $table;
 			}
 		}
 	
 	mysql_free_result($retval);	
-	$sql2 = "SELECT Stock,Amount,Price,Action FROM portfolio WHERE Username =$username';";
+	$sql2 = "SELECT Stock,Amount,Price,Action FROM portfolio WHERE Username ='$username';";
 	mysql_select_db('forecast');
-	$retval2 = mysql_query( $sql, $connection );
+	$retval2 = mysql_query( $sql2, $connection );
 	if(! $retval2 )
 	{
 		die('Could not retrieve data: ' . mysql_error());
@@ -168,7 +178,6 @@ $tradeTable = '';
 					<td><strong>Market Price</strong></td>
 					<td><strong>Gain/Loss</strong></td>
 					<td><strong>Gain/Loss %</strong></td>
-					<td><strong>Actions</strong></td>
 				</tr>
 				<?php echo $htmlTable; ?>
 			</table>
