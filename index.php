@@ -20,9 +20,9 @@
     <![endif]-->
   </head>
 <body>
-
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
+			<a class="navbar-brand" href="index"><img src="lgsmall.png" hight=40 width=160></a>
+			<div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -30,7 +30,6 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index">Stock Forecast</a>
         </div>
         <div id="navbar" class="navbar-collapse">
 		<ul class="nav navbar-nav navbar-left">
@@ -38,13 +37,14 @@
             <li><a href="about">About Us</a></li>
             <li><a href="faqs">FAQS</a></li>
 			<li><a href="dashboard">Dashboard</a></li>
+            <li><a href="portfolio_wireframe">Portfolio</a></li>
 			<li>
 
-				<form class="navbar-form navbar-left" role="search" action="stock_page_wireframe.php?stock">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
-					</div>
-					<button type="submit" class="btn btn-default"><a href="stock_page_wireframe.php?stock">Submit</a></button>
+				<form class="navbar-form navbar-left" action="stock_page_wireframe.php" method="get">
+				<div class="form-group">
+					<input type="text" class="form-control" name="stock"><br>
+				</div>
+				  <input type="submit" class="btn btn-default" value="Submit">
 				</form>
 
 			</li>
@@ -66,7 +66,7 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Stock Forecast</h1>
+        <img src="logo.png" height="200" width="800">
         <p>Here, you can trade real life stocks without actually losing money! Learn how to trade and get ready for the real market.</p>
         <p>
 		<?php if ($_SESSION['FBID']): ?>

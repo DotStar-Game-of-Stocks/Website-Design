@@ -68,7 +68,7 @@ $cashUsed = 0;
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index">Stock Forecast</a>
+          <a class="navbar-brand" href="index"><img src="lgsmall.png" hight=40 width=160></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 		<div id="navbar" class="navbar-collapse">
@@ -77,6 +77,7 @@ $cashUsed = 0;
             <li><a href="about">About Us</a></li>
             <li><a href="faqs">FAQS</a></li>
 			<li><a href="dashboard">Dashboard</a></li>
+            <li><a href="portfolio_wireframe">Portfolio</a></li>
 			<li>
 				<form class="navbar-form navbar-left" role="search">
 					<div class="form-group">

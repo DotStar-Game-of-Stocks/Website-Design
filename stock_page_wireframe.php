@@ -29,7 +29,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index">Stock Forecast</a>
+          <a class="navbar-brand" href="index"><img src="lgsmall.png" hight=40 width=160></a>
         </div>
         <div id="navbar" class="navbar-collapse">
 		<ul class="nav navbar-nav navbar-left">

@@ -117,7 +117,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index">Stock Forecast</a>
+          <a class="navbar-brand" href="index"> <img src="lgsmall.png" hight=40 width=160></a>
         </div>
         <div id="navbar" class="navbar-collapse">
 		<ul class="nav navbar-nav navbar-left">
@@ -125,6 +125,7 @@
             <li><a href="about">About Us</a></li>
             <li><a href="faqs">FAQS</a></li>
 			<li><a href="dashboard">Dashboard</a></li>
+            <li><a href="portfolio_wireframe">Portfolio</a></li>
 			<li>
 				<form class="navbar-form navbar-left" role="search">
 					<div class="form-group">
@@ -152,10 +153,7 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Make New Trade</h1>
-        <p><b>Buy or Sell your choice of Stock</b>
-</div>
-</p>
-      </div>
+        <p><b>Buy or Sell your choice of Stock</b></div></div>
     </div>
 <div class="container">
 	<section style="padding-bottom: 50px; padding-top: 50px;">

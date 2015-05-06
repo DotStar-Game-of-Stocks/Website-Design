@@ -64,7 +64,7 @@ else {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index">Stock Forecast</a>
+          <a class="navbar-brand" href="index"><img src="lgsmall.png" hight=40 width=160></a>
         </div>
         <div id="navbar" class="navbar-collapse">
 		<ul class="nav navbar-nav navbar-left">
@@ -72,6 +72,7 @@ else {
             <li><a href="about">About Us</a></li>
             <li><a href="faqs">FAQS</a></li>
 			<li><a href="dashboard">Dashboard</a></li>
+            <li><a href="portfolio_wireframe">Portfolio</a><li>
 			<li>
 				<form class="navbar-form navbar-left" role="search">
 					<div class="form-group">

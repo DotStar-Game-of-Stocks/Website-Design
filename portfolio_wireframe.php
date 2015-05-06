@@ -121,7 +121,7 @@ $tradeTable = '';
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index">Stock Forecast</a>
+          <a class="navbar-brand" href="index"><img src="lgsmall.png" hight=40 width=160></a>
         </div>
         <div id="navbar" class="navbar-collapse">
 		<ul class="nav navbar-nav navbar-left">
@@ -162,7 +162,7 @@ $tradeTable = '';
 			<h2><?php echo $_SESSION['FULLNAME']; ?>'s Portfolio</h2>
 			<h4>Portfolio Value</h4>
 			<h4>$<?php echo $totalValue; ?></h4>
-			<h4><font color="green">GAIN  50.00%  </font><font color="red">LOSS  10.00%</font></h4>
+			<h4><font color="green">GAIN  0.00%  </font></h4>
 			<p></p>
 			<p></p>
 			<h4><strong>Available Cash</strong></h4>
